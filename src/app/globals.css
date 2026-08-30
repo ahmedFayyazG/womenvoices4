@@ -5,93 +5,78 @@
 .news-img::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#3b078d8c,#7b00bb4d)}.news-img span{z-index:2}.pillar-grid article::before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:330px;background:linear-gradient(135deg,#3b078d8c,#7b00bb4d);pointer-events:none}.pillar-grid article>span{z-index:2}.pillar-grid img{display:block}
 .news-grid h3{min-height:0;margin:12px 0 10px}.news-grid p{margin:0 0 22px}
 
-/* Theme-matched pink connected section */
+/* Refined theme-matched connected section */
 .connected{
   display:grid;
   grid-template-columns:1fr 1fr;
-  color:#fff;
-  border-top:10px solid var(--purple);
+  color:var(--purple);
+  border-top:3px solid var(--purple);
+  border-bottom:3px solid var(--purple);
+  background:linear-gradient(90deg,#fbe2ed 0%,#fbe2ed 50%,#f49ac2 50%,#e979ad 100%);
 }
 .social-panel,.community{
-  position:relative;
-  min-height:540px;
-  overflow:hidden;
-  padding:100px 7vw;
+  min-height:520px;
+  padding:88px 7vw;
   border:0;
   border-radius:0;
-  box-shadow:none;
-}
-.social-panel{background:#861b59}
-.community{background:linear-gradient(135deg,#f494c0 0%,#e875ad 54%,#d95f9c 100%)}
-.social-panel::after,.community::before{
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  width:78px;
-  height:78px;
-  border:0;
-  border-radius:0;
-  background:var(--lime);
-  opacity:1;
-  box-shadow:none;
-}
-.community::before{right:auto;left:0;background:#fff3}
-.connected small{
-  position:relative;
-  z-index:1;
-  padding:0;
-  border-radius:0;
-  color:var(--lime);
   background:transparent;
-  font-size:13px;
-  font-weight:600;
+  box-shadow:none;
+}
+.social-panel{border-right:1px solid #38118752}
+.social-panel::after,.community::before{display:none}
+.connected small{
+  display:block;
+  padding:0;
+  color:#8b2f66;
+  background:transparent;
+  font-size:12px;
+  font-weight:700;
   letter-spacing:2px;
 }
-.community small{color:#fff;background:transparent}
+.community small{color:var(--purple);background:transparent}
 .connected h2{
-  position:relative;
-  z-index:1;
-  margin:40px 0;
-  color:#fff;
-  font-size:45px;
+  margin:34px 0 42px;
+  color:var(--purple);
+  font-size:clamp(42px,4vw,58px);
   font-weight:300;
-  line-height:1.2;
-  letter-spacing:0;
+  line-height:1.08;
+  letter-spacing:-1px;
 }
-.connected h2 b,.community h2 b{color:#fff;font-weight:800}
-.socials{position:relative;z-index:1;display:flex;gap:20px;flex-wrap:wrap}
+.connected h2 b,.community h2 b{color:var(--purple);font-weight:800}
+.socials{display:flex;gap:14px;flex-wrap:wrap}
 .socials i{
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
   color:#fff;
-  border:1px solid #fff;
+  border:1px solid var(--purple);
   border-radius:50%;
-  background:transparent;
+  background:var(--purple);
   box-shadow:none;
   transition:background .2s ease,color .2s ease,transform .2s ease;
 }
-.socials i:hover{color:#861b59;background:var(--lime);transform:translateY(-3px)}
-.community p{position:relative;z-index:1;max-width:620px;color:#fff;font-size:17px;line-height:1.6}
-.community strong{position:relative;z-index:1;display:block;margin:35px 0;color:#fff;font-size:14px;letter-spacing:.4px}
+.socials i:hover{color:var(--purple);background:var(--lime);transform:translateY(-3px)}
+.community p{max-width:610px;margin:0;color:#4f2250;font-size:17px;line-height:1.65}
+.community strong{display:block;margin:32px 0;color:var(--purple);font-size:14px;letter-spacing:.5px}
 .community a{
-  position:relative;
-  z-index:1;
   display:inline-block;
   color:#fff;
-  border:1px solid #fff;
+  border:0;
   border-radius:0;
-  background:transparent;
-  padding:16px 25px;
-  box-shadow:none;
+  background:var(--purple);
+  padding:17px 27px;
+  box-shadow:inset 0 -4px 0 var(--lime);
   font-weight:700;
   transition:background .2s ease,color .2s ease;
 }
-.community a:hover{color:#861b59;background:var(--lime);box-shadow:none;transform:none}
+.community a:hover{color:var(--purple);background:var(--lime);box-shadow:inset 0 -4px 0 var(--purple);transform:none}
 
 @media(max-width:900px){
-  .connected{grid-template-columns:1fr}
+  .connected{
+    grid-template-columns:1fr;
+    background:#fbe2ed;
+  }
   .social-panel,.community{min-height:auto;padding:70px 25px}
-  .social-panel::after,.community::before{width:48px;height:48px}
-  .connected h2{font-size:35px}
+  .social-panel{border-right:0;border-bottom:1px solid #38118752}
+  .community{background:linear-gradient(135deg,#f49ac2 0%,#e979ad 100%)}
+  .connected h2{margin:28px 0 32px;font-size:38px}
 }
