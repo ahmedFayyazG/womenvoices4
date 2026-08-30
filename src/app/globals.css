@@ -10,7 +10,7 @@
   display:grid;
   grid-template-columns:1fr 1fr;
   color:#fff;
-  border-top:10px solid var(--lime);
+  border-top:10px solid var(--purple);
 }
 .social-panel,.community{
   position:relative;
