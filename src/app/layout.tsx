@@ -11,6 +11,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+// 
+
 
 export const metadata: Metadata = {title:"Women's Voices — Empowering women in our community",description:"Women’s Voices homepage for community support, training, volunteering and stories."};
 
