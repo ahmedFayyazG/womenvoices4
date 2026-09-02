@@ -5,117 +5,137 @@
 .news-img::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#3b078d8c,#7b00bb4d)}.news-img span{z-index:2}.pillar-grid article::before{content:"";position:absolute;z-index:1;top:0;left:0;right:0;height:330px;background:linear-gradient(135deg,#3b078d8c,#7b00bb4d);pointer-events:none}.pillar-grid article>span{z-index:2}.pillar-grid img{display:block}
 .news-grid h3{min-height:0;margin:12px 0 10px}.news-grid p{margin:0 0 22px}
 
-.guides{
-  --guides-ink:#321022;
-  --guides-pale:#fff0f7;
-  --guides-pad:clamp(24px,4vw,68px);
+.wgu-section{
+  --wgu-ink:#321022;
+  --wgu-pale:#fff0f7;
+  --wgu-pad:clamp(24px,4vw,68px);
   width:100%;
-  padding:110px var(--guides-pad);
+  padding:110px var(--wgu-pad);
   overflow:hidden;
-  color:var(--guides-ink);
+  color:var(--wgu-ink);
   background:#fff;
 }
-.guides a{
+.wgu-section *,
+.wgu-section *::before,
+.wgu-section *::after{
+  box-sizing:border-box;
+}
+.wgu-section a{
   color:inherit;
   text-decoration:none;
 }
-.guides p{
+.wgu-section p{
   margin:0;
 }
-.guides-head{
+.wgu-section-head{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:end;
+  gap:50px;
   max-width:1512px;
-  margin:0 auto 70px;
-  text-align:center;
+  margin:0 auto 60px;
 }
-.guides-head span{
-  color:var(--guides-ink);
+.wgu-eyebrow{
+  color:var(--wgu-ink);
   font-size:12px;
-  font-weight:700;
+  font-weight:600;
+  line-height:1.5;
   letter-spacing:.13em;
+  text-transform:uppercase;
 }
-.guides-head h2{
-  margin:0;
-  color:var(--deep);
-  font-size:56px;
-  font-weight:700;
-  line-height:1.2;
+.wgu-section-head h2{
+  margin:18px 0 0;
+  color:var(--wgu-ink);
+  font-size:clamp(48px,6vw,88px);
+  font-weight:400;
+  line-height:.95;
 }
-.guides-grid{
+.wgu-section-head>p{
+  max-width:440px;
+  color:var(--wgu-ink);
+  font-size:20px;
+  font-weight:400;
+  line-height:1.5;
+}
+.wgu-policy-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
+  width:100%;
   max-width:1512px;
-  margin:auto;
+  margin:0 auto;
 }
-.guides-card{
+.wgu-policy-card{
   display:flex;
+  min-width:0;
   min-height:385px;
   padding:30px;
   flex-direction:column;
   border:1px solid #fff;
-  background:var(--guides-pale);
-  color:var(--guides-ink);
+  background:var(--wgu-pale);
+  color:var(--wgu-ink);
   transition:background .35s,opacity .35s,transform .35s;
 }
-.guides-grid:hover .guides-card:not(:hover){
+.wgu-policy-grid:hover .wgu-policy-card:not(:hover){
   opacity:.6;
 }
-.guides-card:hover{
+.wgu-policy-card:hover{
   background:#ffd3e7;
   transform:translateY(-4px);
 }
-.guides-card>span{
+.wgu-policy-card>span{
   font-size:11px;
   line-height:1;
 }
-.guides-card h3{
+.wgu-policy-card h3{
   margin:50px 0 20px;
-  color:var(--guides-ink);
+  color:var(--wgu-ink);
   font-size:39px;
-  font-weight:300;
+  font-weight:400;
   line-height:1.02;
 }
-.guides-card p{
+.wgu-policy-card p{
   max-width:320px;
-  color:var(--guides-ink);
+  color:var(--wgu-ink);
   font-size:16px;
+  font-weight:400;
   line-height:1.5;
 }
-.guides-card b{
+.wgu-policy-card .wgu-arrow{
   margin-top:auto;
   align-self:flex-end;
 }
-.guides-reveal{
+.wgu-reveal{
   opacity:0;
   transform:translateY(45px);
   transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1);
 }
-.guides-visible{
+.wgu-reveal.wgu-visible{
   opacity:1;
   transform:none;
 }
 
 @media(max-width:1050px){
-  .guides-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wgu-policy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 @media(max-width:700px){
-  .guides{padding:78px 20px}
-  .guides-head{margin-bottom:38px}
-  .guides-head h2{font-size:54px}
-  .guides-head>p{margin-top:28px;font-size:17px}
-  .guides-grid{grid-template-columns:1fr}
-  .guides-card{min-height:330px}
-  .guides-card h3{font-size:34px}
+  .wgu-section{padding:78px 20px}
+  .wgu-section-head{display:block;margin-bottom:38px}
+  .wgu-section-head h2{font-size:54px}
+  .wgu-section-head>p{margin-top:28px;font-size:17px}
+  .wgu-policy-grid{grid-template-columns:1fr}
+  .wgu-policy-card{min-height:330px}
+  .wgu-policy-card h3{font-size:34px}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .guides *,
-  .guides *::before,
-  .guides *::after{
+  .wgu-section *,
+  .wgu-section *::before,
+  .wgu-section *::after{
     animation-duration:.01ms!important;
     transition-duration:.01ms!important;
   }
-  .guides-reveal{
+  .wgu-reveal{
     opacity:1;
     transform:none;
   }
