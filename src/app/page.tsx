@@ -1,39 +1,355 @@
-'use client';
-import {useEffect,useRef,useState} from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { contact, reports } from "@/lib/site";
 
-const logo='/WVLogo.webp';
-const video='/VideoVM.mp4';
-const news=[
- ['/group.png','TRAINING','We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating.'],
- ['/Nadia.png','VOLUNTEERING','Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves.'],
- ['/wv-leadership.jpg','COMMUNITY','A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide.']
+const programmes = [
+  {
+    image: "/group-optimized.webp",
+    title: "TRAINING",
+    href: "/training",
+    description:
+      "We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating.",
+  },
+  {
+    image: "/Nadia-optimized.webp",
+    title: "VOLUNTEERING",
+    href: "/volunteering",
+    description:
+      "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves.",
+  },
+  {
+    image: "/wv-leadership-optimized.webp",
+    title: "COMMUNITY",
+    href: "/about#activities",
+    description:
+      "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide.",
+  },
 ];
-const pillars=[['/group.png','TRAINING','We offer practical learning opportunities that build confidence, communication, wellbeing, rights awareness and enterprise skills.'],['/Nadia.png','VOLUNTEERING','Volunteers share skills, support drop-in sessions, raise the profile of Women’s Voices CIC and help organise events.'],['/wv-leadership.jpg','COMMUNITY','We provide a safe, accessible space where women can meet, learn, build resilience and strengthen their independence.']];
-const values=[
- {number:'01',title:'Women’s Empowerment',description:'Strengthening confidence, independence, and influence for women within their communities.'},
- {number:'02',title:'Community Voice',description:'Creating safe and accessible spaces for support, learning, and connection.'},
- {number:'03',title:'Equality & Inclusion',description:'Challenging inequality, social isolation, discrimination, and barriers to opportunity.'},
- {number:'04',title:'Education & Growth',description:'Supporting learning, mentoring, skills development, and community participation.'},
- {number:'05',title:'Health & Wellbeing',description:'Improving wellbeing through practical support, creative engagement, and connection.'},
- {number:'06',title:'Collective Strength',description:'Building collaboration, compassion, advocacy, and spaces where every woman’s voice matters.'}
+
+const activities = [
+  {
+    ...programmes[0],
+    description:
+      "We offer practical learning opportunities that build confidence, communication, wellbeing, rights awareness and enterprise skills.",
+  },
+  {
+    ...programmes[1],
+    description:
+      "Volunteers share skills, support drop-in sessions, raise the profile of Women’s Voices CIC and help organise events.",
+  },
+  {
+    ...programmes[2],
+    description:
+      "We provide a safe, accessible space where women can meet, learn, build resilience and strengthen their independence.",
+  },
 ];
-const meetingPattern='https://www.womens-forum.com/images/community/dacf34c2-e993-ec11-a507-c896653a921c/asset/20380b89-c2fa-f011-832e-000d3a43e2d8/file/wf-backgrounds_5.webp?mw=1920&stamp=2026-01-26T14%3A23%3A12.81';
 
-function Header(){const [open,setOpen]=useState(false);const [mega,setMega]=useState('');useEffect(()=>{document.body.style.overflow=open?'hidden':'';return()=>{document.body.style.overflow=''}},[open]);return <><header><a className="mark"><img src={logo} alt="Women’s Voices"/></a><nav>{['ABOUT','TRAINING','VOLUNTEERING','REPORTS','STORIES','CONTACT'].map((x,i)=><button key={x} onMouseEnter={()=>setMega(i===0?'ABOUT':i===3?'REPORTS':i===5?'CONTACT':'')} onMouseLeave={()=>setMega('')}>{(i===0||i===5)&&'⌄ '}{x}</button>)}<a className="partner">SUPPORT OUR WORK</a><a className="login">CONTACT <b>→</b></a></nav><button className={`hamb ${open?'on':''}`} onClick={()=>setOpen(!open)}><i/><i/><span>{open?'CLOSE':'MENU'}</span></button></header>
-<div className={`mega ${mega?'show':''}`} onMouseEnter={()=>setMega(mega)} onMouseLeave={()=>setMega('')}><h2>{mega}</h2>{(mega==='ABOUT'?['Who we are','Aims and vision','Activities','Partner organisations']:mega==='REPORTS'?['Community research project','Creative writing and food','Downloads','Publications']:['Email us','Visit the Burhan Centre','Contact and social media']).map(x=><a key={x}>{x}<b>↗</b></a>)}</div>
-<aside className={`drawer ${open?'show':''}`}><div className="drawer-in">{['ABOUT','TRAINING','VOLUNTEERING','REPORTS','STORIES','CONTACT'].map((x,i)=><a key={x}><em>0{i+1}</em>{x}<b>→</b></a>)}<a className="outline">SUPPORT OUR WORK</a><a className="outline">CONTACT</a></div></aside></>}
+const values = [
+  {
+    number: "01",
+    title: "Women’s Empowerment",
+    description:
+      "Strengthening confidence, independence, and influence for women within their communities.",
+  },
+  {
+    number: "02",
+    title: "Community Voice",
+    description:
+      "Creating safe and accessible spaces for support, learning, and connection.",
+  },
+  {
+    number: "03",
+    title: "Equality & Inclusion",
+    description:
+      "Challenging inequality, social isolation, discrimination, and barriers to opportunity.",
+  },
+  {
+    number: "04",
+    title: "Education & Growth",
+    description:
+      "Supporting learning, mentoring, skills development, and community participation.",
+  },
+  {
+    number: "05",
+    title: "Health & Wellbeing",
+    description:
+      "Improving wellbeing through practical support, creative engagement, and connection.",
+  },
+  {
+    number: "06",
+    title: "Collective Strength",
+    description:
+      "Building collaboration, compassion, advocacy, and spaces where every woman’s voice matters.",
+  },
+];
 
-function WhatGuidesUs(){const sectionRef=useRef<HTMLElement>(null);useEffect(()=>{const elements=sectionRef.current?.querySelectorAll<HTMLElement>('.wgu-reveal');if(!elements?.length)return;const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('wgu-visible');observer.unobserve(entry.target)}})},{threshold:.12});elements.forEach(element=>observer.observe(element));return()=>observer.disconnect()},[]);return <section ref={sectionRef} id="priorities" className="wgu-section" aria-labelledby="what-guides-us-title"><div className="wgu-section-head wgu-reveal"><div><span className="wgu-eyebrow">Our Values</span><h2 id="what-guides-us-title">What Guides Us</h2></div><p>Our work is rooted in empowerment, equality, inclusion, wellbeing, education, and collective strength.</p></div><div className="wgu-policy-grid">{values.map((value,index)=><a key={value.number} className="wgu-policy-card wgu-reveal" href="#research" style={{transitionDelay:`${(index%3)*90}ms`}}><span>{value.number}</span><h3>{value.title}</h3><p>{value.description}</p><span aria-hidden="true" className="wgu-arrow">→</span></a>)}</div></section>}
+function WhatGuidesUs() {
+  return (
+    <section
+      id="priorities"
+      className="wgu-section"
+      aria-labelledby="what-guides-us-title"
+    >
+      <div className="wgu-section-head wgu-reveal">
+        <div>
+          <span className="wgu-eyebrow">Our Values</span>
+          <h2 id="what-guides-us-title">What Guides Us</h2>
+        </div>
+        <p>
+          Our work is rooted in empowerment, equality, inclusion, wellbeing,
+          education, and collective strength.
+        </p>
+      </div>
+      <div className="wgu-policy-grid">
+        {values.map((value, index) => (
+          <Link
+            key={value.number}
+            className="wgu-policy-card wgu-reveal"
+            href="/about#guiding-principles"
+            style={{ animationDelay: `${(index % 3) * 90}ms` }}
+          >
+            <span>{value.number}</span>
+            <h3>{value.title}</h3>
+            <p>{value.description}</p>
+            <span aria-hidden="true" className="wgu-arrow">
+              →
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
 
-function GlobalMeeting(){return <section id="meeting" className="global-meeting" style={{'--meeting-pattern':`url(${meetingPattern})`} as React.CSSProperties}><div className="global-meeting-inner"><h2>RELIVE THE 2025 GLOBAL MEETING</h2><div className="global-meeting-story"><div className="global-video"><iframe src="https://www.youtube-nocookie.com/embed/pRfPA_MGkys?playsinline=1&rel=0&modestbranding=1" title="Women&apos;s Forum Global Meeting 2025 highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/><span className="global-play" aria-hidden="true"/></div><div className="global-meeting-copy"><p>Over two unforgettable days, our global community gathered for our 20th annual Global Meeting, and what a special event it was.</p><p>We shared stories, ideas, and dreams of a world where unity and gender equality go hand in hand, and came together with open hearts and a shared commitment to driving real change.</p><p>Together, we felt the power of connection, the strength of shared purpose, and the beauty of collective action.</p></div></div><div className="global-numbers"><h2>2025 GLOBAL MEETING<br/>BY THE NUMBERS</h2><div className="global-number-grid"><div><strong>1000</strong><span>Attendees</span></div><div><strong>160</strong><span>Speakers</span></div><div><strong>56</strong><span>Sessions</span></div></div><a href="https://www.womens-forum.com/">Discover the event</a></div></div></section>}
+function ResearchSpotlight() {
+  return (
+    <section className="global-meeting" aria-labelledby="research-spotlight-title">
+      <div className="global-meeting-inner">
+        <h2 id="research-spotlight-title">COMMUNITY RESEARCH PROJECT 2022</h2>
+        <div className="global-meeting-story">
+          <div className="global-video global-research-image">
+            <Image
+              src="/research-community.webp"
+              alt="Women’s Voices presenting its community research work"
+              fill
+              sizes="(max-width: 900px) 100vw, 58vw"
+            />
+          </div>
+          <div className="global-meeting-copy">
+            <p>
+              Women’s Voices community researchers investigated the health and
+              social needs of Black and minoritised women aged 50+ living in
+              Longsight.
+            </p>
+            <p>
+              The project documented women’s experiences of health services,
+              wellbeing, isolation and inequality, and set out practical
+              recommendations for better local services.
+            </p>
+            <p>
+              Local volunteers were trained and supported as community
+              researchers, placing women’s own knowledge and experience at the
+              centre of the work.
+            </p>
+          </div>
+        </div>
+        <div className="global-numbers">
+          <h2>
+            COMMUNITY RESEARCH
+            <br />
+            BY THE NUMBERS
+          </h2>
+          <div className="global-number-grid">
+            <div>
+              <strong>50+</strong>
+              <span>Age group studied</span>
+            </div>
+            <div>
+              <strong>6</strong>
+              <span>Researchers trained</span>
+            </div>
+            <div>
+              <strong>9</strong>
+              <span>Key recommendations</span>
+            </div>
+          </div>
+          <a href={reports.communityResearch} target="_blank" rel="noreferrer">
+            Download the report
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-export default function Home(){return <main><Header/><section className="hero"><video autoPlay muted loop playsInline src={video}/><div className="shade"/><div className="hero-center"><h1>Women&apos;s Voices</h1><h2>Empowering women in our community</h2></div></section><div className="ticker"><div>{Array(8).fill('TRAINING . VOLUNTEERING . STORIES . SUPPORT →').map((x,i)=><span key={i}>{x}</span>)}</div></div>
-<section className="who"><div className="who-title"><span>ABOUT US</span><h2>WHO<br/>WE ARE</h2></div><div className="who-copy"><p>Women’s Voices is a not-for-profit organisation based in Longsight, Manchester. Since 2013, it has created a safe and accessible place for women to meet, learn, develop skills, build confidence and grow their independence.</p><div><a>OUR AIMS ↗</a><a>CONTACT US ↗</a><a>OUR PARTNERS ↗</a></div></div></section>
-<section className="latest"><div className="section-head"><h2>WHAT WE DO</h2><a>VIEW ALL <b>→</b></a></div><div className="news-grid">{news.map(([img,title,description],i)=><article key={title} className={`n${i}`}><div className="news-img" style={{backgroundImage:`url(${img})`}}><span>0{i+1}</span></div><h3>{title}</h3><p>{description}</p><a>MORE INFORMATION →</a></article>)}</div></section>
-<section className="impact"><h2>OUR ACTIVITIES</h2><div className="pillar-grid">{pillars.map(([img,h,p],i)=><article key={h}><span>0{i+1}</span><img src={img} alt=""/><h3>{h}</h3><p>{p}</p><a>DISCOVER →</a></article>)}</div></section>
-<WhatGuidesUs/>
-<GlobalMeeting/>
-<section className="meeting"><div className="meeting-copy"><small>AIMS AND VISION</small><h2>EMPOWERMENT,<br/>EQUALITY AND INCLUSION</h2><p>Our aim is to help break cycles of deprivation for Black, Asian, Minority Ethnic and Refugee women, while challenging barriers that prevent women from reaching their potential.</p><p>We strengthen women’s voice and influence so they can become ambassadors for other women and help change how women are viewed in communities and wider society.</p><a>READ OUR STORIES →</a></div><div className="stats"><h3>WOMEN’S VOICES<br/><b>KEY DETAILS</b></h3><div><strong>2013</strong><span>ESTABLISHED</span></div><div><strong>50+</strong><span>RESEARCH FOCUS</span></div><div><strong>CIC</strong><span>COMMUNITY ORGANISATION</span></div></div></section>
-<section className="partners"><p>SUPPORTED BY AND WORKING WITH</p><div><b>BIG LOTTERY<br/>FUND</b><b>MANCHESTER<br/>MAYA PROJECT</b><b>WONDERFULLY<br/>MADE WOMAN</b><b>ANANNA</b><b>WAI YIN<br/>SOCIETY</b></div><a>SEE PARTNER ORGANISATIONS →</a></section>
-<section className="newsletter"><h2>GET IN TOUCH</h2><a>ADMIN@WOMENSVOICES.ORG.UK <b>→</b></a></section>
-<footer><div className="foot-top"><img src={logo} alt="Women’s Voices"/><div><h3>QUICK ACCESS</h3><a>Who we are and what we do</a><a>Reports and publications</a><a>Training and volunteering</a></div><div><small>CONTACT</small><h3>GET IN TOUCH</h3><p>Women’s Voices CIC<br/>Burhan Centre, First Floor<br/>81 Beresford Road, Longsight<br/>Manchester M13 0GX<br/>0161 225 6908</p></div></div><div className="foot-bottom"><span>Privacy & Cookies Notices　 Terms & Conditions　 Legal Mentions</span><span>© Women&apos;s Voices 2026</span></div></footer></main>}
+export default function Home() {
+  return (
+    <>
+      <section className="hero" aria-labelledby="home-title">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/hero-poster.webp"
+          aria-hidden="true"
+        >
+          <source src="/VideoVM-optimized.webm" type="video/webm" />
+          <source src="/VideoVM-optimized.mp4" type="video/mp4" />
+        </video>
+        <div className="shade" />
+        <div className="hero-center">
+          <h1 id="home-title">Women&apos;s Voices</h1>
+          <h2>Empowering women in our community</h2>
+        </div>
+      </section>
+
+      <div className="ticker" aria-hidden="true">
+        <div>
+          {Array(8)
+            .fill("TRAINING · VOLUNTEERING · STORIES · SUPPORT →")
+            .map((text, index) => (
+              <span key={index}>{text}</span>
+            ))}
+        </div>
+      </div>
+
+      <section className="who" aria-labelledby="who-title">
+        <div className="who-title">
+          <span>ABOUT US</span>
+          <h2 id="who-title">
+            WHO
+            <br />
+            WE ARE
+          </h2>
+        </div>
+        <div className="who-copy">
+          <p>
+            Women’s Voices is a not-for-profit organisation based in Longsight,
+            Manchester. Since 2013, it has created a safe and accessible place
+            for women to meet, learn, develop skills, build confidence and grow
+            their independence.
+          </p>
+          <div>
+            <Link href="/about#aims-and-vision">OUR AIMS ↗</Link>
+            <Link href="/contact">CONTACT US ↗</Link>
+            <Link href="/about#partners">OUR PARTNERS ↗</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="latest" aria-labelledby="what-we-do-title">
+        <div className="section-head">
+          <h2 id="what-we-do-title">WHAT WE DO</h2>
+          <Link href="/about#activities">
+            VIEW ALL <b aria-hidden="true">→</b>
+          </Link>
+        </div>
+        <div className="news-grid">
+          {programmes.map((item, index) => (
+            <article key={item.title}>
+              <div className="news-img">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+                <span>{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <Link href={item.href}>MORE INFORMATION →</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="impact" aria-labelledby="activities-title">
+        <h2 id="activities-title">OUR ACTIVITIES</h2>
+        <div className="pillar-grid">
+          {activities.map((item, index) => (
+            <article key={item.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div className="pillar-media">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <Link href={item.href}>DISCOVER →</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <WhatGuidesUs />
+      <ResearchSpotlight />
+
+      <section className="meeting" aria-labelledby="vision-title">
+        <div className="meeting-copy">
+          <small>AIMS AND VISION</small>
+          <h2 id="vision-title">
+            EMPOWERMENT,
+            <br />
+            EQUALITY AND INCLUSION
+          </h2>
+          <p>
+            Our aim is to help break cycles of deprivation for Black, Asian,
+            Minority Ethnic and Refugee women, while challenging barriers that
+            prevent women from reaching their potential.
+          </p>
+          <p>
+            We strengthen women’s voice and influence so they can become
+            ambassadors for other women and help change how women are viewed in
+            communities and wider society.
+          </p>
+          <Link href="/stories">READ OUR STORIES →</Link>
+        </div>
+        <div className="stats">
+          <h3>
+            WOMEN’S VOICES
+            <br />
+            <b>KEY DETAILS</b>
+          </h3>
+          <div>
+            <strong>2013</strong>
+            <span>ESTABLISHED</span>
+          </div>
+          <div>
+            <strong>50+</strong>
+            <span>RESEARCH FOCUS</span>
+          </div>
+          <div>
+            <strong>CIC</strong>
+            <span>COMMUNITY ORGANISATION</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="partners" aria-labelledby="partners-title">
+        <p id="partners-title">SUPPORTED BY AND WORKING WITH</p>
+        <div>
+          <b>BIG LOTTERY<br />FUND</b>
+          <b>MANCHESTER<br />MAYA PROJECT</b>
+          <b>WONDERFULLY<br />MADE WOMAN</b>
+          <b>ANANNA</b>
+          <b>WAI YIN<br />SOCIETY</b>
+        </div>
+        <Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link>
+      </section>
+
+      <section className="newsletter" aria-labelledby="get-in-touch-title">
+        <h2 id="get-in-touch-title">GET IN TOUCH</h2>
+        <a href={`mailto:${contact.email}`}>
+          {contact.email.toUpperCase()} <b aria-hidden="true">→</b>
+        </a>
+      </section>
+    </>
+  );
+}

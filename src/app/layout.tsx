@@ -1,20 +1,48 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Raleway } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { contact, SITE_NAME, SITE_URL, socialLinks } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-// 
-
-
-export const metadata: Metadata = {title:"Women's Voices — Empowering women in our community",description:"Women’s Voices homepage for community support, training, volunteering and stories."};
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  title: {
+    default: "Women’s Voices — Empowering women in our community",
+    template: "%s | Women’s Voices",
+  },
+  description:
+    "Women’s Voices supports women in Longsight and Greater Manchester through training, volunteering, community activities and research.",
+  keywords: [
+    "Women’s Voices Manchester",
+    "women’s support Longsight",
+    "ESOL Manchester",
+    "women volunteering Manchester",
+    "community training Manchester",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "/",
+    siteName: SITE_NAME,
+    title: "Women’s Voices — Empowering women in our community",
+    description:
+      "A safe and accessible place for women to meet, learn, build confidence and strengthen their independence.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Women’s Voices",
+    description: "Empowering women in our community.",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -22,11 +50,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={raleway.variable}>
+      <body>
+        <SiteHeader />
+        <main id="main-content">{children}</main>
+        <SiteFooter />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NonprofitOrganization",
+              name: SITE_NAME,
+              url: SITE_URL,
+              email: contact.email,
+              telephone: contact.phoneHref,
+              foundingDate: "2013",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Burhan Centre, First Floor, 81 Beresford Road",
+                addressLocality: "Manchester",
+                postalCode: "M13 0GX",
+                addressCountry: "GB",
+              },
+              sameAs: socialLinks.map((item) => item.href),
+            }),
+          }}
+        />
+      </body>
     </html>
   );
 }
