@@ -23,6 +23,7 @@ body {
   color: var(--ink);
   background: #fff;
   font-family: var(--font-site);
+  font-weight: 400;
 }
 
 body,
@@ -31,6 +32,22 @@ input,
 textarea,
 select {
   font-family: var(--font-site);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-site);
+  font-weight: 400;
+}
+
+b,
+strong {
+  font-family: var(--font-site);
+  font-weight: 500;
 }
 
 button,
@@ -133,7 +150,7 @@ section[id] {
   color: #fff;
   background: transparent;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -293,7 +310,7 @@ section[id] {
   overflow: hidden;
   color: #fff;
   background: var(--brand-pink);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .ticker > div {
@@ -357,7 +374,7 @@ section[id] {
 
 .who-copy a {
   color: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .latest {
@@ -426,7 +443,7 @@ section[id] {
   padding: 13px;
   color: var(--deep);
   background: var(--lime);
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .news-grid h3 {
@@ -443,7 +460,7 @@ section[id] {
 .news-grid a {
   padding-bottom: 5px;
   border-bottom: 2px solid var(--lime);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .impact {
@@ -500,7 +517,7 @@ section[id] {
 .pillar-grid a {
   display: block;
   margin-top: 25px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* What Guides Us — retains the approved homepage design */
@@ -530,7 +547,7 @@ section[id] {
 
 .wgu-eyebrow {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -583,10 +600,11 @@ section[id] {
 }
 
 .wgu-policy-card h3 {
-  margin: 50px 0 20px;
-  font-size: 39px;
+  min-height: 2.16em;
+  margin: 46px 0 20px;
+  font-size: 36px;
   font-weight: 400;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 .wgu-policy-card p {
@@ -598,6 +616,8 @@ section[id] {
 .wgu-policy-card .wgu-arrow {
   align-self: flex-end;
   margin-top: auto;
+  font-size: 25px;
+  font-weight: 400;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -638,9 +658,10 @@ section[id] {
 .global-meeting {
   padding: 105px 6vw 115px;
   color: #fff;
-  background-color: var(--brand-pink);
-  background-image: radial-gradient(circle at 10% 15%, #f26aa626 0 12%, transparent 13%),
-    linear-gradient(135deg, #c91f71 0%, #ae155d 100%);
+  background-color: #73002f;
+  background-image: url("/wv-background.svg");
+  background-position: center;
+  background-size: cover;
 }
 
 .global-meeting-inner {
@@ -718,7 +739,7 @@ section[id] {
   margin-top: 10px;
   color: #fff;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .global-numbers > a {
@@ -726,7 +747,7 @@ section[id] {
   padding: 17px 28px;
   color: var(--brand-pink);
   background: #fff;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .meeting {
@@ -755,7 +776,7 @@ section[id] {
   padding: 16px 25px;
   border: 1px solid var(--deep);
   color: var(--deep);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .stats {
@@ -810,7 +831,7 @@ section[id] {
 
 .partners > a {
   color: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .newsletter {
@@ -830,7 +851,7 @@ section[id] {
   margin-left: auto;
   padding: 18px 24px;
   border: 1px solid #fff;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .newsletter b {
@@ -909,7 +930,7 @@ footer {
 .page-hero span,
 .content-cta span {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -955,7 +976,7 @@ footer {
   display: inline-block;
   color: var(--brand-pink);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.15em;
 }
 
@@ -1020,7 +1041,7 @@ footer {
 .story-grid article > span {
   color: var(--brand-pink);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .principles-grid h3,
@@ -1042,7 +1063,7 @@ footer {
   display: inline-block;
   margin-top: 20px;
   color: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .content-dark .content-card-grid article {
@@ -1060,7 +1081,7 @@ footer {
   padding: 17px 25px;
   color: #fff;
   background: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .partner-list {
@@ -1075,7 +1096,7 @@ footer {
   padding: 18px 22px;
   border: 1px solid #d9cfe8;
   color: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .content-cta {
@@ -1120,7 +1141,7 @@ footer {
 .opportunity-list li span {
   color: var(--lime);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .report-row {
@@ -1181,7 +1202,7 @@ footer {
 .contact-grid a {
   color: var(--purple);
   font-size: clamp(20px, 3vw, 34px);
-  font-weight: 600;
+  font-weight: 500;
   overflow-wrap: anywhere;
 }
 
@@ -1202,7 +1223,7 @@ footer {
 
 .legal-copy a {
   color: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: underline;
 }
 
@@ -1220,7 +1241,7 @@ footer {
 .not-found > span {
   color: var(--brand-pink);
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.2em;
 }
 
@@ -1240,7 +1261,7 @@ footer {
   padding: 17px 25px;
   color: #fff;
   background: var(--purple);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media (max-width: 1120px) {
@@ -1530,7 +1551,8 @@ footer {
   }
 
   .wgu-policy-card h3 {
-    font-size: 34px;
+    min-height: 0;
+    font-size: 32px;
   }
 
   .foot-bottom {
