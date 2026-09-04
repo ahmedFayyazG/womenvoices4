@@ -20,7 +20,7 @@ export default function OpenGraphImage() {
         width: "100%",
       }}
     >
-      <div style={{ fontSize: 92, fontWeight: 400, letterSpacing: -3 }}>
+      <div style={{ fontSize: 92, fontWeight: 700, letterSpacing: -3 }}>
         Women’s Voices
       </div>
       <div style={{ color: "#d8ff45", fontSize: 38, marginTop: 28 }}>

@@ -10,12 +10,8 @@
   --font-site: var(--font-raleway), Arial, sans-serif;
 }
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-  font-family: var(--font-site);
-  font-synthesis: none;
 }
 
 html {
@@ -27,25 +23,6 @@ body {
   color: var(--ink);
   background: #fff;
   font-family: var(--font-site);
-  font-weight: 400;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-site);
-  font-weight: 400;
-}
-
-b,
-strong,
-button,
-a {
-  font-family: var(--font-site);
-  font-weight: 400;
 }
 
 body,
@@ -156,7 +133,7 @@ section[id] {
   color: #fff;
   background: transparent;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -316,7 +293,7 @@ section[id] {
   overflow: hidden;
   color: #fff;
   background: var(--brand-pink);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .ticker > div {
@@ -380,7 +357,7 @@ section[id] {
 
 .who-copy a {
   color: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .latest {
@@ -449,7 +426,7 @@ section[id] {
   padding: 13px;
   color: var(--deep);
   background: var(--lime);
-  font-weight: 400;
+  font-weight: 800;
 }
 
 .news-grid h3 {
@@ -466,7 +443,7 @@ section[id] {
 .news-grid a {
   padding-bottom: 5px;
   border-bottom: 2px solid var(--lime);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .impact {
@@ -523,7 +500,7 @@ section[id] {
 .pillar-grid a {
   display: block;
   margin-top: 25px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 /* What Guides Us — retains the approved homepage design */
@@ -536,7 +513,6 @@ section[id] {
   overflow: hidden;
   color: var(--wgu-ink);
   background: #fff;
-  font-family: var(--font-site);
 }
 
 .wgu-section p {
@@ -553,9 +529,8 @@ section[id] {
 }
 
 .wgu-eyebrow {
-  font-family: var(--font-site);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -563,7 +538,6 @@ section[id] {
 
 .wgu-section-head h2 {
   margin: 18px 0 0;
-  font-family: var(--font-site);
   font-size: clamp(48px, 6vw, 88px);
   font-weight: 400;
   line-height: 0.95;
@@ -571,9 +545,7 @@ section[id] {
 
 .wgu-section-head > p {
   max-width: 440px;
-  font-family: var(--font-site);
   font-size: 20px;
-  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -593,7 +565,6 @@ section[id] {
   padding: 30px;
   border: 1px solid #fff;
   background: var(--wgu-pale);
-  font-family: var(--font-site);
   transition: background 0.35s, opacity 0.35s, transform 0.35s;
 }
 
@@ -607,37 +578,26 @@ section[id] {
 }
 
 .wgu-policy-card > span {
-  font-family: var(--font-site);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 11px;
   line-height: 1;
-  letter-spacing: 0.08em;
 }
 
 .wgu-policy-card h3 {
-  min-height: 2.16em;
-  margin: 46px 0 20px;
-  font-family: var(--font-site);
-  font-size: 36px;
+  margin: 50px 0 20px;
+  font-size: 39px;
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  line-height: 1.02;
 }
 
 .wgu-policy-card p {
   max-width: 320px;
-  font-family: var(--font-site);
   font-size: 16px;
-  font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .wgu-policy-card .wgu-arrow {
   align-self: flex-end;
   margin-top: auto;
-  font-size: 25px;
-  font-weight: 400;
-  letter-spacing: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -678,11 +638,9 @@ section[id] {
 .global-meeting {
   padding: 105px 6vw 115px;
   color: #fff;
-  background-color: #73002f;
-  background-image: linear-gradient(#73002f12, #73002f12),
-    url("/wv-background.svg");
-  background-position: center;
-  background-size: cover;
+  background-color: var(--brand-pink);
+  background-image: radial-gradient(circle at 10% 15%, #f26aa626 0 12%, transparent 13%),
+    linear-gradient(135deg, #c91f71 0%, #ae155d 100%);
 }
 
 .global-meeting-inner {
@@ -694,7 +652,7 @@ section[id] {
   margin: 0;
   color: #fff;
   font-size: 56px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.12;
 }
 
@@ -751,7 +709,7 @@ section[id] {
   display: block;
   color: #fff;
   font-size: 76px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
 }
 
@@ -760,7 +718,7 @@ section[id] {
   margin-top: 10px;
   color: #fff;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .global-numbers > a {
@@ -768,7 +726,7 @@ section[id] {
   padding: 17px 28px;
   color: var(--brand-pink);
   background: #fff;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .meeting {
@@ -797,7 +755,7 @@ section[id] {
   padding: 16px 25px;
   border: 1px solid var(--deep);
   color: var(--deep);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .stats {
@@ -852,7 +810,7 @@ section[id] {
 
 .partners > a {
   color: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .newsletter {
@@ -872,7 +830,7 @@ section[id] {
   margin-left: auto;
   padding: 18px 24px;
   border: 1px solid #fff;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .newsletter b {
@@ -951,7 +909,7 @@ footer {
 .page-hero span,
 .content-cta span {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -997,7 +955,7 @@ footer {
   display: inline-block;
   color: var(--brand-pink);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.15em;
 }
 
@@ -1062,7 +1020,7 @@ footer {
 .story-grid article > span {
   color: var(--brand-pink);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .principles-grid h3,
@@ -1071,7 +1029,7 @@ footer {
   margin: 55px 0 14px;
   color: var(--purple);
   font-size: 31px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -1084,7 +1042,7 @@ footer {
   display: inline-block;
   margin-top: 20px;
   color: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .content-dark .content-card-grid article {
@@ -1102,7 +1060,7 @@ footer {
   padding: 17px 25px;
   color: #fff;
   background: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .partner-list {
@@ -1117,7 +1075,7 @@ footer {
   padding: 18px 22px;
   border: 1px solid #d9cfe8;
   color: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .content-cta {
@@ -1162,7 +1120,7 @@ footer {
 .opportunity-list li span {
   color: var(--lime);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .report-row {
@@ -1223,7 +1181,7 @@ footer {
 .contact-grid a {
   color: var(--purple);
   font-size: clamp(20px, 3vw, 34px);
-  font-weight: 400;
+  font-weight: 600;
   overflow-wrap: anywhere;
 }
 
@@ -1244,7 +1202,7 @@ footer {
 
 .legal-copy a {
   color: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -1262,7 +1220,7 @@ footer {
 .not-found > span {
   color: var(--brand-pink);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.2em;
 }
 
@@ -1282,7 +1240,7 @@ footer {
   padding: 17px 25px;
   color: #fff;
   background: var(--purple);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 @media (max-width: 1120px) {
@@ -1572,8 +1530,7 @@ footer {
   }
 
   .wgu-policy-card h3 {
-    min-height: 0;
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .foot-bottom {
