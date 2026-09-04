@@ -1,0 +1,22 @@
+WOMEN'S VOICES — COMPLETE PROJECT
+=================================
+
+This folder contains the complete website and all pages.
+
+TO VIEW IT:
+1. Right-click START-WEBSITE.command
+2. Choose Open
+3. If macOS asks again, click Open
+
+The script always runs this exact folder and opens:
+http://localhost:3000
+
+TO UPLOAD IT TO GITHUB:
+1. Stop the website with Control+C in Terminal
+2. Right-click UPLOAD-TO-GITHUB.command
+3. Choose Open
+
+Correct live deployment:
+https://womenvoices4.vercel.app
+
+Do not use https://womenvoices2.vercel.app — that is the old website.
