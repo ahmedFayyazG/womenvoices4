@@ -17,13 +17,18 @@ export default function PrivacyPage() {
       intro="How this website handles information when you browse it or choose to contact Women’s Voices."
     >
       <article className="legal-copy">
-        <p className="legal-updated">Last updated: 2 September 2026</p>
+        <p className="legal-updated">Last updated: 4 September 2026</p>
         <h2>Information you provide</h2>
         <p>
-          This website does not currently collect information through an online
-          form or user account. If you contact us by email or telephone, you
-          choose what information to provide. Women’s Voices may use that
-          information to respond to your enquiry and provide relevant support.
+          When you use our contact form, or contact us by email or telephone,
+          you choose what information to provide. Women’s Voices may use that
+          information to respond to your enquiry, provide relevant support and
+          keep an appropriate record of the contact.
+        </p>
+        <p>
+          Contact-form submissions are processed by FormSubmit and delivered
+          to the Women’s Voices email inbox. Please do not submit confidential
+          medical, financial or legal information through the website form.
         </p>
 
         <h2>Technical information</h2>

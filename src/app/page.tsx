@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { contact, reports } from "@/lib/site";
+import { contact } from "@/lib/site";
 
 const programmes = [
   {
@@ -123,60 +123,57 @@ function WhatGuidesUs() {
 
 function ResearchSpotlight() {
   return (
-    <section className="global-meeting" aria-labelledby="research-spotlight-title">
-      <div className="global-meeting-inner">
-        <h2 id="research-spotlight-title">COMMUNITY RESEARCH PROJECT 2022</h2>
-        <div className="global-meeting-story">
-          <div className="global-video global-research-image">
-            <Image
-              src="/research-community.webp"
-              alt="Women’s Voices presenting its community research work"
-              fill
-              sizes="(max-width: 900px) 100vw, 58vw"
-            />
+    <section className="home-research" aria-labelledby="research-spotlight-title">
+      <div className="home-research-image">
+        <Image
+          src="/research-community.webp"
+          alt="Women’s Voices presenting its community research"
+          fill
+          sizes="(max-width: 900px) 100vw, 50vw"
+        />
+      </div>
+      <div className="home-research-copy">
+        <span>Community research · 2022</span>
+        <h2 id="research-spotlight-title">
+          Community research, led by lived experience.
+        </h2>
+        <p>
+          Women from the community investigated the health and social needs of
+          Black and minoritised women aged 50+ in Longsight, placing women’s own
+          knowledge at the centre of the work.
+        </p>
+        <div className="home-research-metrics" aria-label="Research highlights">
+          <div>
+            <strong>50+</strong>
+            <span>Age group studied</span>
           </div>
-          <div className="global-meeting-copy">
-            <p>
-              Women’s Voices community researchers investigated the health and
-              social needs of Black and minoritised women aged 50+ living in
-              Longsight.
-            </p>
-            <p>
-              The project documented women’s experiences of health services,
-              wellbeing, isolation and inequality, and set out practical
-              recommendations for better local services.
-            </p>
-            <p>
-              Local volunteers were trained and supported as community
-              researchers, placing women’s own knowledge and experience at the
-              centre of the work.
-            </p>
+          <div>
+            <strong>06</strong>
+            <span>Researchers trained</span>
+          </div>
+          <div>
+            <strong>09</strong>
+            <span>Key recommendations</span>
           </div>
         </div>
-        <div className="global-numbers">
-          <h2>
-            COMMUNITY RESEARCH
-            <br />
-            BY THE NUMBERS
-          </h2>
-          <div className="global-number-grid">
-            <div>
-              <strong>50+</strong>
-              <span>Age group studied</span>
-            </div>
-            <div>
-              <strong>6</strong>
-              <span>Researchers trained</span>
-            </div>
-            <div>
-              <strong>9</strong>
-              <span>Key recommendations</span>
-            </div>
-          </div>
-          <a href={reports.communityResearch} target="_blank" rel="noreferrer">
-            Download the report
-          </a>
-        </div>
+        <Link className="home-research-link" href="/reports#community-research">
+          Read the research →
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+function ConversationCallout() {
+  return (
+    <section className="home-conversation" aria-labelledby="conversation-title">
+      <span>Start a conversation</span>
+      <h2 id="conversation-title">Let’s make space for what comes next.</h2>
+      <div>
+        <Link className="home-conversation-button" href="/contact#enquiry-form">
+          Send an enquiry <span aria-hidden="true">→</span>
+        </Link>
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>
       </div>
     </section>
   );
@@ -289,7 +286,6 @@ export default function Home() {
       </section>
 
       <WhatGuidesUs />
-      <ResearchSpotlight />
 
       <section className="meeting" aria-labelledby="vision-title">
         <div className="meeting-copy">
@@ -344,12 +340,8 @@ export default function Home() {
         <Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link>
       </section>
 
-      <section className="newsletter" aria-labelledby="get-in-touch-title">
-        <h2 id="get-in-touch-title">GET IN TOUCH</h2>
-        <a href={`mailto:${contact.email}`}>
-          {contact.email.toUpperCase()} <b aria-hidden="true">→</b>
-        </a>
-      </section>
+      <ResearchSpotlight />
+      <ConversationCallout />
     </>
   );
 }

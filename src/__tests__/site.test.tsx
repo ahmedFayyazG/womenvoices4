@@ -1,7 +1,8 @@
 import { existsSync } from "node:fs";
-import { fireEvent, render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, test, vi } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import Home from "@/app/page";
+import ContactPage from "@/app/contact/page";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -14,6 +15,8 @@ import {
 vi.mock("next/navigation", () => ({
   usePathname: () => "/",
 }));
+
+afterEach(cleanup);
 
 describe("site structure", () => {
   test("every sitemap route has an App Router page", () => {
@@ -48,6 +51,21 @@ describe("homepage", () => {
     expect(screen.getByRole("heading", { name: "WHAT WE DO" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "OUR ACTIVITIES" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "What Guides Us" })).toBeDefined();
+  });
+});
+
+describe("contact form", () => {
+  test("collects the essential enquiry details using the free form endpoint", () => {
+    const { container } = render(<ContactPage />);
+    const form = container.querySelector("form");
+
+    expect(form?.getAttribute("action")).toBe(
+      `https://formsubmit.co/${contact.email}`,
+    );
+    expect(screen.getByLabelText("Full name").hasAttribute("required")).toBe(true);
+    expect(screen.getByLabelText("Email address").hasAttribute("required")).toBe(true);
+    expect(screen.getByLabelText("How can we help?").hasAttribute("required")).toBe(true);
+    expect(screen.getByRole("button", { name: /send enquiry/i })).toBeDefined();
   });
 });
 

@@ -9,6 +9,7 @@ const requiredRoutes = [
   "/reports",
   "/stories",
   "/contact",
+  "/contact/thank-you",
   "/support",
   "/privacy",
   "/terms",

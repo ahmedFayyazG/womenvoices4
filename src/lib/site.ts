@@ -57,7 +57,7 @@ export const dropdownMenus: Record<
     { label: "Publications", href: "/reports#publications" },
   ],
   CONTACT: [
-    { label: "Email us", href: "mailto:admin@womensvoices.org.uk" },
+    { label: "Send an enquiry", href: "/contact#enquiry-form" },
     { label: "Visit the Burhan Centre", href: "/contact#visit" },
     { label: "Contact and social media", href: "/contact#social-media" },
   ],
