@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroFilm } from "@/components/hero-film";
 import { contact, reports } from "@/lib/site";
 
 const programmes = [
@@ -23,24 +24,6 @@ const programmes = [
     href: "/about#activities",
     description:
       "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide.",
-  },
-];
-
-const activities = [
-  {
-    ...programmes[0],
-    description:
-      "We offer practical learning opportunities that build confidence, communication, wellbeing, rights awareness and enterprise skills.",
-  },
-  {
-    ...programmes[1],
-    description:
-      "Volunteers share skills, support drop-in sessions, raise the profile of Women’s Voices CIC and help organise events.",
-  },
-  {
-    ...programmes[2],
-    description:
-      "We provide a safe, accessible space where women can meet, learn, build resilience and strengthen their independence.",
   },
 ];
 
@@ -83,273 +66,60 @@ const values = [
   },
 ];
 
-function WhatGuidesUs() {
-  return (
-    <section
-      id="priorities"
-      className="wgu-section"
-      aria-labelledby="what-guides-us-title"
-    >
-      <div className="wgu-section-head wgu-reveal">
-        <div>
-          <span className="wgu-eyebrow">Our Values</span>
-          <h2 id="what-guides-us-title">What Guides Us</h2>
-        </div>
-        <p>
-          Our work is rooted in empowerment, equality, inclusion, wellbeing,
-          education, and collective strength.
-        </p>
-      </div>
-      <div className="wgu-policy-grid">
-        {values.map((value, index) => (
-          <Link
-            key={value.number}
-            className="wgu-policy-card wgu-reveal"
-            href="/about#guiding-principles"
-            style={{ animationDelay: `${(index % 3) * 90}ms` }}
-          >
-            <span>{value.number}</span>
-            <h3>{value.title}</h3>
-            <p>{value.description}</p>
-            <span aria-hidden="true" className="wgu-arrow">
-              →
-            </span>
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function ResearchSpotlight() {
-  return (
-    <section className="global-meeting" aria-labelledby="research-spotlight-title">
-      <div className="global-meeting-inner">
-        <h2 id="research-spotlight-title">COMMUNITY RESEARCH PROJECT 2022</h2>
-        <div className="global-meeting-story">
-          <div className="global-video global-research-image">
-            <Image
-              src="/research-community.webp"
-              alt="Women’s Voices presenting its community research work"
-              fill
-              sizes="(max-width: 900px) 100vw, 58vw"
-            />
-          </div>
-          <div className="global-meeting-copy">
-            <p>
-              Women’s Voices community researchers investigated the health and
-              social needs of Black and minoritised women aged 50+ living in
-              Longsight.
-            </p>
-            <p>
-              The project documented women’s experiences of health services,
-              wellbeing, isolation and inequality, and set out practical
-              recommendations for better local services.
-            </p>
-            <p>
-              Local volunteers were trained and supported as community
-              researchers, placing women’s own knowledge and experience at the
-              centre of the work.
-            </p>
-          </div>
-        </div>
-        <div className="global-numbers">
-          <h2>
-            COMMUNITY RESEARCH
-            <br />
-            BY THE NUMBERS
-          </h2>
-          <div className="global-number-grid">
-            <div>
-              <strong>50+</strong>
-              <span>Age group studied</span>
-            </div>
-            <div>
-              <strong>6</strong>
-              <span>Researchers trained</span>
-            </div>
-            <div>
-              <strong>9</strong>
-              <span>Key recommendations</span>
-            </div>
-          </div>
-          <a href={reports.communityResearch} target="_blank" rel="noreferrer">
-            Download the report
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Home() {
   return (
     <>
-      <section className="hero" aria-labelledby="home-title">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/hero-poster.webp"
-          aria-hidden="true"
-        >
-          <source src="/VideoVM-optimized.webm" type="video/webm" />
-          <source src="/VideoVM-optimized.mp4" type="video/mp4" />
-        </video>
-        <div className="shade" />
-        <div className="hero-center">
-          <h1 id="home-title">Women&apos;s Voices</h1>
-          <h2>Empowering women in our community</h2>
-        </div>
-      </section>
-
-      <div className="ticker" aria-hidden="true">
-        <div>
-          {Array(8)
-            .fill("TRAINING · VOLUNTEERING · STORIES · SUPPORT →")
-            .map((text, index) => (
-              <span key={index}>{text}</span>
-            ))}
-        </div>
-      </div>
-
-      <section className="who" aria-labelledby="who-title">
-        <div className="who-title">
-          <span>ABOUT US</span>
-          <h2 id="who-title">
-            WHO
-            <br />
-            WE ARE
-          </h2>
-        </div>
-        <div className="who-copy">
-          <p>
-            Women’s Voices is a not-for-profit organisation based in Longsight,
-            Manchester. Since 2013, it has created a safe and accessible place
-            for women to meet, learn, develop skills, build confidence and grow
-            their independence.
-          </p>
-          <div>
-            <Link href="/about#aims-and-vision">OUR AIMS ↗</Link>
-            <Link href="/contact">CONTACT US ↗</Link>
-            <Link href="/about#partners">OUR PARTNERS ↗</Link>
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="hero-editorial">
+          <span className="eyebrow">Women’s Voices · Manchester</span>
+          <h1 id="home-title">A place to belong.<br /><em>A voice to be heard.</em></h1>
+          <p>Empowering women in our community through learning, connection and the confidence to shape what comes next.</p>
+          <div className="hero-actions">
+            <Link className="button button-dark" href="/training">Explore our work <span aria-hidden="true">↗</span></Link>
+            <Link className="text-link" href="/contact">Come and meet us <span aria-hidden="true">→</span></Link>
           </div>
+          <div className="hero-location"><span>Rooted in Longsight.</span><span>Here for women across Manchester.</span></div>
         </div>
+        <HeroFilm />
       </section>
 
-      <section className="latest" aria-labelledby="what-we-do-title">
-        <div className="section-head">
-          <h2 id="what-we-do-title">WHAT WE DO</h2>
-          <Link href="/about#activities">
-            VIEW ALL <b aria-hidden="true">→</b>
-          </Link>
-        </div>
-        <div className="news-grid">
-          {programmes.map((item, index) => (
-            <article key={item.title}>
-              <div className="news-img">
-                <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 900px) 100vw, 33vw"
-                />
-                <span>{String(index + 1).padStart(2, "0")}</span>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <Link href={item.href}>MORE INFORMATION →</Link>
-            </article>
-          ))}
-        </div>
+      <div className="community-strip"><span>Women supporting women.</span><span>Learning together.</span><span>Growing in confidence.</span><span>Since 2013.</span></div>
+
+      <section className="home-about section-wrap" aria-labelledby="who-title">
+        <div><span className="eyebrow">01 / Who we are</span><h2 id="who-title">Local roots.<br /><em>Lasting possibilities.</em></h2></div>
+        <div className="about-intro"><p>Women’s Voices is a not-for-profit organisation based in Longsight, Manchester. Since 2013, we have created a safe and accessible place for women to meet, learn, develop skills, build confidence and grow their independence.</p><div className="inline-links"><Link className="text-link" href="/about#aims-and-vision">Our aims and vision <span aria-hidden="true">↗</span></Link><Link className="text-link" href="/about#partners">Our partners <span aria-hidden="true">↗</span></Link></div></div>
       </section>
 
-      <section className="impact" aria-labelledby="activities-title">
-        <h2 id="activities-title">OUR ACTIVITIES</h2>
-        <div className="pillar-grid">
-          {activities.map((item, index) => (
-            <article key={item.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div className="pillar-media">
-                <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 900px) 100vw, 33vw"
-                />
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <Link href={item.href}>DISCOVER →</Link>
-            </article>
-          ))}
-        </div>
+      <section className="home-programmes section-wrap" aria-labelledby="what-we-do-title">
+        <div className="editorial-heading"><div><span className="eyebrow">02 / Opportunities for you</span><h2 id="what-we-do-title">WHAT WE DO</h2></div><Link className="text-link" href="/about#activities">Discover our programmes <span aria-hidden="true">↗</span></Link></div>
+        <div className="programme-grid">{programmes.map((item, index) => (
+          <article className="programme-card" key={item.title}>
+            <Link className="programme-image" href={item.href} aria-label={`Explore ${item.title.toLowerCase()}`}><Image src={item.image} alt="" fill sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw" /><span className="image-index">0{index + 1}</span><span className="image-arrow" aria-hidden="true">↗</span></Link>
+            <h3><Link href={item.href}>{item.title.toLowerCase()}</Link></h3><p>{item.description}</p><Link className="text-link" href={item.href}>Explore {item.title.toLowerCase()} <span aria-hidden="true">→</span></Link>
+          </article>
+        ))}</div>
       </section>
 
-      <WhatGuidesUs />
-      <ResearchSpotlight />
-
-      <section className="meeting" aria-labelledby="vision-title">
-        <div className="meeting-copy">
-          <small>AIMS AND VISION</small>
-          <h2 id="vision-title">
-            EMPOWERMENT,
-            <br />
-            EQUALITY AND INCLUSION
-          </h2>
-          <p>
-            Our aim is to help break cycles of deprivation for Black, Asian,
-            Minority Ethnic and Refugee women, while challenging barriers that
-            prevent women from reaching their potential.
-          </p>
-          <p>
-            We strengthen women’s voice and influence so they can become
-            ambassadors for other women and help change how women are viewed in
-            communities and wider society.
-          </p>
-          <Link href="/stories">READ OUR STORIES →</Link>
-        </div>
-        <div className="stats">
-          <h3>
-            WOMEN’S VOICES
-            <br />
-            <b>KEY DETAILS</b>
-          </h3>
-          <div>
-            <strong>2013</strong>
-            <span>ESTABLISHED</span>
-          </div>
-          <div>
-            <strong>50+</strong>
-            <span>RESEARCH FOCUS</span>
-          </div>
-          <div>
-            <strong>CIC</strong>
-            <span>COMMUNITY ORGANISATION</span>
-          </div>
-        </div>
+      <section className="home-activities section-wrap" aria-labelledby="activities-title">
+        <div><span className="eyebrow">03 / Everyday connection</span><h2 id="activities-title">OUR ACTIVITIES</h2><p>Space to share a skill, try something new, or simply feel part of a community.</p><Link className="button button-dark" href="/contact">Ask about joining us <span aria-hidden="true">↗</span></Link></div>
+        <div className="activity-list"><div><span>01</span><h3>Weekly drop-ins &amp; support</h3><p>A welcoming place to meet and connect.</p></div><div><span>02</span><h3>Creativity &amp; practical skills</h3><p>Arts, crafts, sewing and food-growing sessions.</p></div><div><span>03</span><h3>Culture &amp; community</h3><p>Shared meals, celebrations, trips and events.</p></div></div>
       </section>
 
-      <section className="partners" aria-labelledby="partners-title">
-        <p id="partners-title">SUPPORTED BY AND WORKING WITH</p>
-        <div>
-          <b>BIG LOTTERY<br />FUND</b>
-          <b>MANCHESTER<br />MAYA PROJECT</b>
-          <b>WONDERFULLY<br />MADE WOMAN</b>
-          <b>ANANNA</b>
-          <b>WAI YIN<br />SOCIETY</b>
-        </div>
-        <Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link>
+      <section id="priorities" className="home-values section-wrap" aria-labelledby="what-guides-us-title">
+        <div className="editorial-heading"><div><span className="eyebrow">04 / Our values</span><h2 id="what-guides-us-title">What Guides Us</h2></div><p>Our work is rooted in empowerment, equality, inclusion, wellbeing, education, and collective strength.</p></div>
+        <div className="values-grid">{values.map(value => <Link className="value-item" key={value.number} href="/about#guiding-principles"><span className="value-number">{value.number}</span><h3>{value.title}</h3><p>{value.description}</p><span className="value-arrow" aria-hidden="true">↗</span></Link>)}</div>
       </section>
 
-      <section className="newsletter" aria-labelledby="get-in-touch-title">
-        <h2 id="get-in-touch-title">GET IN TOUCH</h2>
-        <a href={`mailto:${contact.email}`}>
-          {contact.email.toUpperCase()} <b aria-hidden="true">→</b>
-        </a>
+      <section className="home-vision section-wrap" aria-labelledby="vision-title"><span className="eyebrow">Our aims and vision</span><h2 id="vision-title">Empowerment.<br />Equality. <em>Inclusion.</em></h2><div><p>We challenge the barriers that prevent Black, Asian, Minority Ethnic and Refugee women from reaching their potential. We strengthen women’s voice and influence so they can become ambassadors for others and help shape their communities.</p><Link className="text-link" href="/stories">Read our stories <span aria-hidden="true">↗</span></Link></div></section>
+
+      <section className="home-partners section-wrap" aria-labelledby="partners-title"><span className="eyebrow" id="partners-title">Supported by and working with</span><div><span>Big Lottery Fund</span><span>Manchester Maya Project</span><span>Wonderfully Made Woman</span><span>Ananna</span><span>Wai Yin Society</span></div><Link className="text-link" href="/about#partners">Meet our partner organisations <span aria-hidden="true">↗</span></Link></section>
+
+      <section className="home-research section-wrap" aria-labelledby="research-spotlight-title">
+        <div className="research-photo"><Image src="/research-community.webp" alt="Women’s Voices presenting its community research work" fill sizes="(max-width: 900px) 100vw, 50vw" /><span>Longsight, Manchester</span></div>
+        <div className="research-copy"><span className="eyebrow">Community research · 2022</span><h2 id="research-spotlight-title">Community research,<br /><em>led by women.</em></h2><p>Listening to the health and social needs of Black and minoritised women aged 50+ in Longsight. Our community researchers placed women’s own experiences at the heart of recommendations for better local services.</p><div className="research-numbers"><div><strong>50+</strong><span>Age group studied</span></div><div><strong>6</strong><span>Researchers trained</span></div><div><strong>9</strong><span>Recommendations</span></div></div><a className="button button-lime" href={reports.communityResearch} target="_blank" rel="noreferrer">Read the research report <span aria-hidden="true">↗</span><span className="sr-only"> (PDF, opens in a new tab)</span></a></div>
       </section>
+
+      <section className="home-conversation section-wrap" aria-labelledby="get-in-touch-title"><div><span className="eyebrow">Start a conversation</span><h2 id="get-in-touch-title">Let’s make space<br />for <em>what comes next.</em></h2></div><div className="conversation-actions"><Link className="button button-dark" href="/contact">Send an enquiry <span aria-hidden="true">↗</span></Link><a className="text-link" href={`mailto:${contact.email}`}>{contact.email}</a></div></section>
     </>
   );
 }

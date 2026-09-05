@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
   dropdownMenus,
@@ -10,6 +11,7 @@ import {
 } from "@/lib/site";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -20,7 +22,7 @@ export function SiteHeader() {
 
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    drawerRef.current?.querySelector<HTMLAnchorElement>("a[href]")?.focus();
+    drawerRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -45,8 +47,14 @@ export function SiteHeader() {
       }
     }
 
+    const desktop = window.matchMedia?.("(min-width: 1201px)");
+    function handleDesktop(event: MediaQueryListEvent) {
+      if (event.matches) setMobileOpen(false);
+    }
+    desktop?.addEventListener("change", handleDesktop);
     document.addEventListener("keydown", handleKeyDown);
     return () => {
+      desktop?.removeEventListener("change", handleDesktop);
       document.body.style.overflow = originalOverflow;
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -65,7 +73,9 @@ export function SiteHeader() {
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
-      <header className="site-header" onMouseLeave={() => setOpenMenu(null)}>
+      <header className="site-header" onMouseLeave={() => setOpenMenu(null)} onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpenMenu(null);
+      }}>
         <Link className="mark" href="/" aria-label="Women’s Voices home">
           <Image
             src="/WVLogo-cropped.webp"
@@ -85,7 +95,7 @@ export function SiteHeader() {
                 key={item.label}
                 onMouseEnter={() => setOpenMenu(menu)}
               >
-                <Link href={item.href} onClick={() => setOpenMenu(null)}>
+                <Link href={item.href} aria-current={pathname === item.href ? "page" : undefined} onClick={() => setOpenMenu(null)}>
                   {item.label}
                 </Link>
                 <button
@@ -108,6 +118,7 @@ export function SiteHeader() {
               <Link
                 key={item.label}
                 href={item.href}
+                aria-current={pathname === item.href ? "page" : undefined}
                 onFocus={() => setOpenMenu(null)}
                 onClick={() => setOpenMenu(null)}
               >
@@ -157,6 +168,7 @@ export function SiteHeader() {
       </header>
 
       <aside
+        inert={!mobileOpen}
         ref={drawerRef}
         id="mobile-menu"
         className={`drawer ${mobileOpen ? "show" : ""}`}
@@ -166,6 +178,7 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
       >
         <div className="drawer-in">
+          <button type="button" className="drawer-close" tabIndex={mobileOpen ? 0 : -1} onClick={() => { setMobileOpen(false); menuButtonRef.current?.focus(); }}>Close menu ×</button>
           {primaryNavigation.map((item, index) => (
             <Link
               key={item.label}

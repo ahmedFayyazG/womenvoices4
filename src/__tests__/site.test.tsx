@@ -1,6 +1,6 @@
 import { existsSync } from "node:fs";
-import { fireEvent, render, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, test, vi } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import Home from "@/app/page";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -10,6 +10,8 @@ import {
   primaryNavigation,
   siteRoutes,
 } from "@/lib/site";
+
+afterEach(cleanup);
 
 vi.mock("next/navigation", () => ({
   usePathname: () => "/",
@@ -63,6 +65,16 @@ describe("shared navigation", () => {
     fireEvent.click(button);
     expect(screen.getByRole("button", { name: "Close navigation menu" }).getAttribute("aria-expanded")).toBe("true");
     expect(screen.getByRole("dialog", { name: "Mobile navigation" }).getAttribute("aria-hidden")).toBe("false");
+  });
+
+  test("mobile navigation closes from inside the focus trap and restores focus", () => {
+    render(<SiteHeader />);
+    const toggle = screen.getByRole("button", { name: "Open navigation menu" });
+    fireEvent.click(toggle);
+    fireEvent.click(screen.getByRole("button", { name: "Close menu ×" }));
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(toggle);
+    expect(document.body.style.overflow).toBe("");
   });
 
   test("footer exposes working contact and legal links", () => {

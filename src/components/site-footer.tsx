@@ -18,7 +18,8 @@ export function SiteFooter() {
           <h2>QUICK ACCESS</h2>
           <Link href="/about">Who we are and what we do</Link>
           <Link href="/reports">Reports and publications</Link>
-          <Link href="/training">Training and volunteering</Link>
+          <Link href="/training">Training opportunities</Link>
+          <Link href="/volunteering">Volunteer with us</Link>
           <Link href="/support">Support our work</Link>
         </div>
         <div>
