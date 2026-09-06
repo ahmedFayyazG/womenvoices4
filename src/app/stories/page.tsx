@@ -18,7 +18,6 @@ const stories = [
 export default function StoriesPage() {
   return (
     <PageShell
-      eyebrow="Community voices"
       title="OUR STORIES"
       intro="Women’s Voices is built through the knowledge, generosity and determination of women in our community."
     >
@@ -37,7 +36,6 @@ export default function StoriesPage() {
       </section>
       <section className="content-cta">
         <div>
-          <span>YOUR VOICE MATTERS</span>
           <h2>CONNECT WITH THE WOMEN’S VOICES COMMUNITY</h2>
         </div>
         <Link href="/contact">CONTACT US →</Link>

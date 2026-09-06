@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function LegalPage() {
   return (
     <PageShell
-      eyebrow="Organisation details"
       title="LEGAL INFORMATION"
       intro="Key organisational, contact and website-publishing information for Women’s Voices."
     >

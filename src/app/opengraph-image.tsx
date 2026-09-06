@@ -9,7 +9,7 @@ export default function OpenGraphImage() {
     <div
       style={{
         alignItems: "center",
-        background: "linear-gradient(135deg, #c91f71 0%, #6f20f4 100%)",
+        background: "#210064",
         color: "white",
         display: "flex",
         flexDirection: "column",

@@ -92,7 +92,6 @@ function WhatGuidesUs() {
     >
       <div className="wgu-section-head wgu-reveal">
         <div>
-          <span className="wgu-eyebrow">Our Values</span>
           <h2 id="what-guides-us-title">What Guides Us</h2>
         </div>
         <p>
@@ -212,26 +211,23 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="who" aria-labelledby="who-title">
-        <div className="who-title">
-          <span>ABOUT US</span>
-          <h2 id="who-title">
-            WHO
-            <br />
-            WE ARE
-          </h2>
-        </div>
-        <div className="who-copy">
+      <section className="who-v2" aria-labelledby="who-title">
+        <h2 id="who-title">
+          WHO
+          <br />
+          WE ARE
+        </h2>
+        <div className="who-v2-card">
           <p>
             Women’s Voices is a not-for-profit organisation based in Longsight,
             Manchester. Since 2013, it has created a safe and accessible place
             for women to meet, learn, develop skills, build confidence and grow
             their independence.
           </p>
-          <div>
-            <Link href="/about#aims-and-vision">OUR AIMS ↗</Link>
-            <Link href="/contact">CONTACT US ↗</Link>
-            <Link href="/about#partners">OUR PARTNERS ↗</Link>
+          <div className="who-v2-links">
+            <Link href="/about#aims-and-vision">OUR AIMS →</Link>
+            <Link href="/contact">CONTACT US →</Link>
+            <Link href="/about#partners">OUR PARTNERS →</Link>
           </div>
         </div>
       </section>
@@ -289,7 +285,6 @@ export default function Home() {
 
       <section className="meeting" aria-labelledby="vision-title">
         <div className="meeting-copy">
-          <small>AIMS AND VISION</small>
           <h2 id="vision-title">
             EMPOWERMENT,
             <br />
@@ -331,11 +326,24 @@ export default function Home() {
       <section className="partners" aria-labelledby="partners-title">
         <p id="partners-title">SUPPORTED BY AND WORKING WITH</p>
         <div>
-          <b>BIG LOTTERY<br />FUND</b>
-          <b>MANCHESTER<br />MAYA PROJECT</b>
-          <b>WONDERFULLY<br />MADE WOMAN</b>
-          <b>ANANNA</b>
-          <b>WAI YIN<br />SOCIETY</b>
+          <Image
+            src="/partners/lottery-logo.jpg"
+            alt="Big Lottery Fund"
+            width={166}
+            height={124}
+          />
+          <Image
+            src="/partners/mcc-logo.jpg"
+            alt="Manchester City Council"
+            width={220}
+            height={42}
+          />
+          <Image
+            src="/partners/maya-logo.png"
+            alt="Manchester Maya Project"
+            width={180}
+            height={56}
+          />
         </div>
         <Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link>
       </section>

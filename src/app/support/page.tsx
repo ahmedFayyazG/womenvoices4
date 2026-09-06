@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return (
     <PageShell
-      eyebrow="Make a difference"
       title="SUPPORT OUR WORK"
       intro="Your time, skills, partnership and practical support help Women’s Voices create welcoming opportunities for women in our community."
     >
@@ -40,7 +39,6 @@ export default function SupportPage() {
       </section>
       <section className="content-cta">
         <div>
-          <span>SUPPORT STARTS WITH A CONVERSATION</span>
           <h2>TELL US HOW YOU WOULD LIKE TO GET INVOLVED</h2>
         </div>
         <Link href="/contact">CONTACT US →</Link>

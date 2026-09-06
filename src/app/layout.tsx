@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import localFont from "next/font/local";
+import PinkPageLoader from "@/components/PinkPageLoader";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { contact, SITE_NAME, SITE_URL, socialLinks } from "@/lib/site";
 import "./globals.css";
 
-const raleway = Raleway({
-  variable: "--font-raleway",
-  subsets: ["latin"],
+const excon = localFont({
+  src: "../fonts/Excon-Variable.woff2",
+  variable: "--font-excon",
+  weight: "100 900",
   display: "swap",
 });
 
@@ -50,8 +52,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={raleway.variable}>
+    <html lang="en" className={excon.variable}>
       <body>
+        <PinkPageLoader background="#d94c86" minimumDuration={1500} />
         <SiteHeader />
         <main id="main-content">{children}</main>
         <SiteFooter />

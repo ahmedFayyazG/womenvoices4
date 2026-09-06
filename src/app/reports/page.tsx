@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function ReportsPage() {
   return (
     <PageShell
-      eyebrow="Research and creative work"
       title="REPORTS & PUBLICATIONS"
       intro="Research led by women’s lived experience, alongside creative work developed with members of Women’s Voices CIC."
     >
