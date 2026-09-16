@@ -1110,11 +1110,31 @@ section[id] {
   margin: 45px 0;
 }
 
-.partner-list span {
+.partner-list span,
+.partner-logo-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 18px 22px;
+  min-width: 160px;
+  min-height: 72px;
   border: 1px solid #d9cfe8;
   color: var(--purple);
   font-weight: 500;
+  text-align: center;
+}
+
+.partner-logo-tile img {
+  max-width: 140px;
+  max-height: 44px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.partner-logo-tile--dark {
+  background: var(--purple);
+  border-color: var(--purple);
 }
 
 .content-cta {

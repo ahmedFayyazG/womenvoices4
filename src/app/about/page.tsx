@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
+const funders = [
+  { name: "National Lottery Community Fund", logo: "/logos/national-lottery-community-fund.svg" },
+  { name: "Manchester City Council", logo: "/logos/manchester-city-council.svg" },
+  { name: "Sport England", logo: "/logos/sport-england.png", dark: true },
+  { name: "Wheels & Walks", logo: "/logos/wheels-and-walks.png", dark: true },
+  { name: "King's Charles III Charitable Fund", logo: "/logos/kings-charles-fund.png" },
+  { name: "Lloyds Bank Foundation", logo: "/logos/lloyds-bank-foundation.svg" },
+  { name: "Postcode Neighbourhood Trust", logo: "/logos/postcode-neighbourhood-trust.png" },
+  { name: "Renew Community Fund", logo: "/logos/renew-community-fund.svg" },
+  { name: "Our Manchester Food Partnership", logo: null },
+];
+
 const principles = [
   "Women’s empowerment",
   "Community voice",
@@ -100,17 +112,22 @@ export default function AboutPage() {
 
       <section id="partners" className="content-section">
         <span className="content-number">05</span>
-        <h2>PARTNER ORGANISATIONS</h2>
+        <h2>FUNDERS &amp; PARTNERS</h2>
         <p className="section-lead">
           Collaboration helps us connect women with wider support, learning and
           opportunities across Manchester.
         </p>
-        <div className="partner-list" aria-label="Partner organisations">
-          <span>Big Lottery Fund</span>
-          <span>Manchester Maya Project</span>
-          <span>Wonderfully Made Woman</span>
-          <span>Ananna</span>
-          <span>Wai Yin Society</span>
+        <div className="partner-list" aria-label="Funders and partners">
+          {funders.map((funder) => (
+            <span key={funder.name} className={funder.dark ? "partner-logo-tile partner-logo-tile--dark" : "partner-logo-tile"}>
+              {funder.logo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={funder.logo} alt={funder.name} loading="lazy" />
+              ) : (
+                funder.name
+              )}
+            </span>
+          ))}
         </div>
         <Link className="content-button" href="/contact">
           Talk to us about partnership →
