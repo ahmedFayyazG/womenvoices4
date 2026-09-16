@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { contact, SITE_NAME, SITE_URL, socialLinks } from "@/lib/site";
 import "./globals.css";
+import "./who-v2-visual.css";
 
 const excon = localFont({
   src: "../fonts/Excon-Variable.woff2",
