@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageShell
-      eyebrow="We’re here to listen"
       title="CONTACT US"
       intro="Ask about training, volunteering, community support, partnership opportunities or visiting the Women’s Voices centre."
     >

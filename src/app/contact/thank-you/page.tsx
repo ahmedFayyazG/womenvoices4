@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function ContactThankYouPage() {
   return (
     <PageShell
-      eyebrow="Message received"
       title="THANK YOU"
       intro="Your enquiry has been sent to Women’s Voices. A member of our team will respond as soon as possible."
     >

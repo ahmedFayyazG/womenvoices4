@@ -21,7 +21,6 @@ const courses = [
 export default function TrainingPage() {
   return (
     <PageShell
-      eyebrow="Learn with us"
       title="TRAINING"
       intro="Practical learning that builds confidence, communication, wellbeing and routes into volunteering, further education and work."
     >
@@ -58,7 +57,6 @@ export default function TrainingPage() {
 
       <section className="content-cta">
         <div>
-          <span>INTERESTED IN A COURSE?</span>
           <h2>ASK ABOUT CURRENT DATES AND PLACES</h2>
         </div>
         <Link href="/contact">CONTACT WOMEN’S VOICES →</Link>

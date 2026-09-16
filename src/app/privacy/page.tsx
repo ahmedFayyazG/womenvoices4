@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <PageShell
-      eyebrow="Website information"
       title="PRIVACY & COOKIES"
       intro="How this website handles information when you browse it or choose to contact Women’s Voices."
     >

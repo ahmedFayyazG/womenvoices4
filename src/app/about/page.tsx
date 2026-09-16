@@ -33,7 +33,6 @@ const principles = [
 export default function AboutPage() {
   return (
     <PageShell
-      eyebrow="About Women’s Voices"
       title="WHO WE ARE"
       intro="A women-led organisation creating opportunities for connection, confidence, learning and collective action in Longsight and across Greater Manchester."
     >

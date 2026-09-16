@@ -21,7 +21,6 @@ const opportunities = [
 export default function VolunteeringPage() {
   return (
     <PageShell
-      eyebrow="Get involved"
       title="VOLUNTEERING"
       intro="Volunteers are central to our work, helping Women’s Voices operate day to day and creating a culture that supports and empowers women."
     >
@@ -57,7 +56,6 @@ export default function VolunteeringPage() {
 
       <section className="content-cta">
         <div>
-          <span>READY TO HELP?</span>
           <h2>TELL US ABOUT YOUR INTERESTS AND AVAILABILITY</h2>
         </div>
         <Link href="/contact">BECOME A VOLUNTEER →</Link>

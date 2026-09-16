@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <PageShell
-      eyebrow="Website information"
       title="TERMS & CONDITIONS"
       intro="The basic terms that apply when you use the Women’s Voices website and its resources."
     >
