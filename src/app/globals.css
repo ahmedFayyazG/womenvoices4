@@ -1178,18 +1178,17 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 22px;
-  min-width: 160px;
-  min-height: 72px;
-  border: 1px solid #d9cfe8;
+  padding: 24px 28px;
+  min-width: 200px;
+  min-height: 110px;
   color: var(--purple);
   font-weight: 300;
   text-align: center;
 }
 
 .partner-logo-tile img {
-  max-width: 140px;
-  max-height: 44px;
+  max-width: 200px;
+  max-height: 72px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1197,7 +1196,6 @@ section[id] {
 
 .partner-logo-tile--dark {
   background: var(--purple);
-  border-color: var(--purple);
 }
 
 .content-cta {
