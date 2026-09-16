@@ -1,0 +1,131 @@
+.who-v2 {
+  isolation: isolate;
+  min-height: 760px;
+}
+
+.who-v2::before,
+.who-v2::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 7vw;
+  top: 50%;
+  width: min(34vw, 520px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.who-v2::after {
+  background: url("/488648071_1135728305263676_4533181307934619130_n.jpg") center / cover no-repeat;
+  border: 8px solid var(--pale-pink);
+  box-shadow: 0 0 0 3px #ef6ba7, 0 24px 55px rgba(57, 9, 111, 0.16);
+  transform: translateY(-38%);
+}
+
+.who-v2::before {
+  z-index: 0;
+  width: min(38vw, 580px);
+  right: calc(7vw - 30px);
+  border: 2px solid rgba(239, 107, 167, 0.55);
+  background:
+    radial-gradient(circle at 50% -1%, #ef6ba7 0 12px, transparent 13px),
+    radial-gradient(circle at 101% 50%, var(--deep) 0 11px, transparent 12px),
+    radial-gradient(circle at 12% 84%, var(--lime) 0 13px, transparent 14px),
+    radial-gradient(circle at 78% 96%, #ef6ba7 0 11px, transparent 12px);
+  transform: translateY(-41%);
+  animation: who-orbit 18s linear infinite;
+}
+
+.who-v2 h2,
+.who-v2-card {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes who-orbit {
+  from {
+    transform: translateY(-41%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-41%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-v2::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 901px) {
+  .who-v2::before,
+  .who-v2::after {
+    right: 4vw;
+  }
+
+  .who-v2::after {
+    width: min(31vw, 430px);
+  }
+
+  .who-v2::before {
+    width: min(35vw, 480px);
+    right: calc(4vw - 25px);
+  }
+
+  .who-v2-card {
+    max-width: 55%;
+    margin-left: 4%;
+  }
+}
+
+@media (max-width: 900px) {
+  .who-v2 {
+    min-height: 0;
+    padding-bottom: 500px;
+  }
+
+  .who-v2::after {
+    top: auto;
+    right: auto;
+    bottom: 70px;
+    left: 50%;
+    width: min(72vw, 390px);
+    transform: translateX(-50%);
+  }
+
+  .who-v2::before {
+    top: auto;
+    right: auto;
+    bottom: 42px;
+    left: 50%;
+    width: min(80vw, 445px);
+    transform: translateX(-50%);
+    animation: who-orbit-mobile 18s linear infinite;
+  }
+
+  @keyframes who-orbit-mobile {
+    from {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .who-v2 {
+    padding-bottom: 390px;
+  }
+
+  .who-v2::after {
+    bottom: 58px;
+    width: min(76vw, 310px);
+    border-width: 6px;
+  }
+
+  .who-v2::before {
+    bottom: 38px;
+    width: min(86vw, 350px);
+  }
+}
