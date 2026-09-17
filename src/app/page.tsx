@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroSlider from "@/components/HeroSlider";
 import { contact } from "@/lib/site";
 
 const programmes = [
@@ -182,18 +183,7 @@ export default function Home() {
   return (
     <>
       <section className="hero" aria-labelledby="home-title">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/hero-poster.webp"
-          aria-hidden="true"
-        >
-          <source src="/VideoVM-optimized.webm" type="video/webm" />
-          <source src="/VideoVM-optimized.mp4" type="video/mp4" />
-        </video>
+        <HeroSlider />
         <div className="shade" />
         <div className="hero-center">
           <h1 id="home-title">Women&apos;s Voices</h1>
@@ -326,24 +316,30 @@ export default function Home() {
       <section className="partners" aria-labelledby="partners-title">
         <p id="partners-title">SUPPORTED BY AND WORKING WITH</p>
         <div>
-          <Image
-            src="/partners/lottery-logo.jpg"
-            alt="Big Lottery Fund"
-            width={166}
-            height={124}
-          />
-          <Image
-            src="/partners/mcc-logo.jpg"
-            alt="Manchester City Council"
-            width={220}
-            height={42}
-          />
-          <Image
-            src="/partners/maya-logo.png"
-            alt="Manchester Maya Project"
-            width={180}
-            height={56}
-          />
+          <span className="partners-logo-box">
+            <Image
+              src="/logos/lloyds-bank-foundation.svg"
+              alt="Lloyds Bank Foundation"
+              width={300}
+              height={73}
+            />
+          </span>
+          <span className="partners-logo-box">
+            <Image
+              src="/logos/national-lottery-community-fund.svg"
+              alt="National Lottery Community Fund"
+              width={300}
+              height={98}
+            />
+          </span>
+          <span className="partners-logo-box">
+            <Image
+              src="/partners/mcc-logo.jpg"
+              alt="Manchester City Council"
+              width={330}
+              height={63}
+            />
+          </span>
         </div>
         <Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link>
       </section>
