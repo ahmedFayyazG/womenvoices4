@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 import "./stories.css";
@@ -47,6 +48,15 @@ const testimonials = [
   }
 ];
 
+const communityPhotos = [
+  "/gallery/event-18.jpg",
+  "/gallery/event-11.jpg",
+  "/gallery/event-06.jpg",
+  "/gallery/event-14.jpg",
+  "/gallery/event-16.jpg",
+  "/gallery/event-22.jpg",
+];
+
 export default function StoriesPage() {
   return <PageShell title="OUR STORIES" intro="First-hand stories of connection, confidence and change from women in our community.">
     <section className="stories-intro"><div className="stories-intro-inner"><span className="stories-kicker">In their own words · 2026</span><h2>Every woman arrives with her own story. Here, women share what belonging, learning and being heard has meant to them.</h2></div></section>
@@ -55,6 +65,23 @@ export default function StoriesPage() {
         <div className="testimonial-meta"><span className="testimonial-number">{String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span><h2>{testimonial.name}</h2><span className="testimonial-role">{testimonial.label}</span></div>
         <div className="testimonial-copy">{testimonial.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
       </article>)}
+    </section>
+    <section className="content-section">
+      <span className="content-number">02</span>
+      <h2>COMMUNITY LIFE IN PICTURES</h2>
+      <div className="photo-gallery">
+        {communityPhotos.map((src, index) => (
+          <div className="photo-gallery-item" key={src}>
+            <Image
+              src={src}
+              alt="Women's Voices community event"
+              fill
+              sizes="(max-width: 900px) 50vw, 33vw"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+      </div>
     </section>
     <section className="stories-closing"><span>Women supporting women</span><div><h2>A safe place to meet, learn, build confidence and move forward together.</h2><Link href="/contact">Connect with Women’s Voices →</Link></div></section>
   </PageShell>;

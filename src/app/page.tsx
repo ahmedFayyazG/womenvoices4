@@ -28,21 +28,21 @@ const programmes = [
 
 const activities = [
   {
-    image: "/group-optimized.webp",
+    image: "/activities/learning-skills.jpg",
     title: "LEARNING & SKILLS",
     href: "/training",
     description:
       "Practical learning opportunities that build confidence, communication, wellbeing, rights awareness and enterprise skills.",
   },
   {
-    image: "/Nadia-optimized.webp",
+    image: "/activities/weekly-dropins.jpg",
     title: "WEEKLY DROP-INS",
     href: "/volunteering",
     description:
       "Welcoming sessions where women connect, share skills, access support and take part in activities led by volunteers and the community.",
   },
   {
-    image: "/wv-leadership-optimized.webp",
+    image: "/activities/events-socials.jpg",
     title: "EVENTS & SOCIALS",
     href: "/about#activities",
     description:

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 
@@ -16,6 +17,13 @@ const opportunities = [
   "Contribute to arts, crafts, sewing and food-growing sessions",
   "Support fundraising and community outreach",
   "Help raise the profile of Women’s Voices CIC",
+];
+
+const volunteeringPhotos = [
+  "/gallery/event-26.jpg",
+  "/gallery/event-23.jpg",
+  "/gallery/event-27.jpg",
+  "/gallery/event-24.jpg",
 ];
 
 export default function VolunteeringPage() {
@@ -52,6 +60,24 @@ export default function VolunteeringPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="content-section">
+        <span className="content-number">03</span>
+        <h2>VOLUNTEERING IN PICTURES</h2>
+        <div className="photo-gallery">
+          {volunteeringPhotos.map((src, index) => (
+            <div className="photo-gallery-item" key={src}>
+              <Image
+                src={src}
+                alt="Volunteers taking part in a Women’s Voices community session"
+                fill
+                sizes="(max-width: 900px) 50vw, 25vw"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="content-cta">

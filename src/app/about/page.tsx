@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
+
+const activityPhotos = [
+  "/gallery/event-21.jpg",
+  "/gallery/event-29.jpg",
+  "/gallery/event-08.jpg",
+  "/gallery/event-06.jpg",
+];
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -106,6 +114,19 @@ export default function AboutPage() {
             <p>Welcoming spaces for advice, wellbeing, creativity, cultural events and shared meals.</p>
             <Link href="/contact">Visit the centre →</Link>
           </article>
+        </div>
+        <div className="photo-gallery">
+          {activityPhotos.map((src, index) => (
+            <div className="photo-gallery-item" key={src}>
+              <Image
+                src={src}
+                alt="Women's Voices activities and community sessions"
+                fill
+                sizes="(max-width: 900px) 50vw, 25vw"
+                priority={index === 0}
+              />
+            </div>
+          ))}
         </div>
       </section>
 

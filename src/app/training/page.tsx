@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 
@@ -16,6 +17,14 @@ const courses = [
   ["Employability", "Support with confidence, digital skills, interviews and pathways into work or further learning."],
   ["Healthy, affordable eating", "Ideas and practical skills for nutritious meals, budgeting and reducing food waste."],
   ["Environmental workshops", "Sessions covering recycling, food growing and positive action in the local community."],
+];
+
+const trainingPhotos = [
+  "/gallery/event-28.jpg",
+  "/gallery/event-01.jpg",
+  "/gallery/event-25.jpg",
+  "/gallery/event-30.jpg",
+  "/gallery/event-07.jpg",
 ];
 
 export default function TrainingPage() {
@@ -51,6 +60,24 @@ export default function TrainingPage() {
               <h3>{title}</h3>
               <p>{description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section">
+        <span className="content-number">03</span>
+        <h2>TRAINING IN PICTURES</h2>
+        <div className="photo-gallery">
+          {trainingPhotos.map((src, index) => (
+            <div className="photo-gallery-item" key={src}>
+              <Image
+                src={src}
+                alt="Women taking part in a Women’s Voices training session"
+                fill
+                sizes="(max-width: 900px) 50vw, 20vw"
+                priority={index === 0}
+              />
+            </div>
           ))}
         </div>
       </section>
