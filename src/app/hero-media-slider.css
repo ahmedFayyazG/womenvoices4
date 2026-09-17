@@ -1,0 +1,38 @@
+.hero {
+  background-image: url("/hero/hero-slide-1.jpg");
+  animation: hero-media-slideshow 30s infinite;
+}
+
+.hero video {
+  display: none;
+}
+
+@keyframes hero-media-slideshow {
+  0%, 14% {
+    background-image: url("/hero/hero-slide-1.jpg");
+  }
+  17%, 30% {
+    background-image: url("/hero/hero-slide-2.jpg");
+  }
+  33%, 47% {
+    background-image: url("/hero/hero-slide-3.jpg");
+  }
+  50%, 64% {
+    background-image: url("/hero/hero-slide-4.jpg");
+  }
+  67%, 81% {
+    background-image: url("/hero/hero-slide-5.jpg");
+  }
+  84%, 97% {
+    background-image: url("/hero/hero-slide-6.jpg");
+  }
+  100% {
+    background-image: url("/hero/hero-slide-1.jpg");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none;
+  }
+}
