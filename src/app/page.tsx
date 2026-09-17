@@ -28,19 +28,25 @@ const programmes = [
 
 const activities = [
   {
-    ...programmes[0],
+    image: "/group-optimized.webp",
+    title: "LEARNING & SKILLS",
+    href: "/training",
     description:
-      "We offer practical learning opportunities that build confidence, communication, wellbeing, rights awareness and enterprise skills.",
+      "Practical learning opportunities that build confidence, communication, wellbeing, rights awareness and enterprise skills.",
   },
   {
-    ...programmes[1],
+    image: "/Nadia-optimized.webp",
+    title: "WEEKLY DROP-INS",
+    href: "/volunteering",
     description:
-      "Volunteers share skills, support drop-in sessions, raise the profile of Women’s Voices CIC and help organise events.",
+      "Welcoming sessions where women connect, share skills, access support and take part in activities led by volunteers and the community.",
   },
   {
-    ...programmes[2],
+    image: "/wv-leadership-optimized.webp",
+    title: "EVENTS & SOCIALS",
+    href: "/about#activities",
     description:
-      "We provide a safe, accessible space where women can meet, learn, build resilience and strengthen their independence.",
+      "Cultural events, creative sessions, shared meals and social gatherings that strengthen friendships, belonging and collective wellbeing.",
   },
 ];
 
@@ -101,78 +107,13 @@ export default function Home() {
         <video autoPlay muted loop playsInline preload="metadata" poster="/hero-poster.webp" aria-hidden="true"><source src="/VideoVM-optimized.webm" type="video/webm" /><source src="/VideoVM-optimized.mp4" type="video/mp4" /></video>
         <div className="shade" /><div className="hero-center"><h1 id="home-title">Women&apos;s Voices</h1><h2>Empowering women in our community</h2></div>
       </section>
-
       <div className="ticker" aria-hidden="true"><div>{Array(8).fill("TRAINING · VOLUNTEERING · STORIES · SUPPORT →").map((text, index) => <span key={index}>{text}</span>)}</div></div>
-
-      <section className="who-v2" aria-labelledby="who-title">
-        <h2 id="who-title">WHO<br />WE ARE</h2>
-        <div className="who-v2-card">
-          <p>
-            Women’s Voices is a feminist organisation, established in 2013 and
-            rooted in the Longsight area of Manchester, with a reach across
-            Greater Manchester. We are by women, for women. We provide a safe,
-            women-only, non-judgemental space where global majority women —
-            women seeking asylum, refugees, and other marginalised women — can
-            meet, learn, build confidence and find their voice.
-          </p>
-          <p>
-            Our mission is to enable women to achieve empowerment, equality
-            and inclusion, to overcome the barriers holding them back, and to
-            become ambassadors for other women — so that women’s voices are
-            nurtured, heard and amplified. As a women’s organisation in the
-            city where the suffragette movement began, we hold the word
-            feminist deliberately: the forces that keep women down are
-            political, and naming them is part of the work.
-          </p>
-          <div className="who-v2-links"><Link href="/about#aims-and-vision">OUR AIMS →</Link><Link href="/contact">CONTACT US →</Link><Link href="/about#partners">OUR PARTNERS →</Link></div>
-        </div>
-      </section>
-
-      <section className="latest" aria-labelledby="what-we-do-title">
-        <div className="section-head"><h2 id="what-we-do-title">WHAT WE DO</h2><Link href="/about#activities">VIEW ALL <b aria-hidden="true">→</b></Link></div>
-        <div className="news-grid">{programmes.map((item, index) => <article key={item.title}><div className="news-img"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" /><span>{String(index + 1).padStart(2, "0")}</span></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href}>MORE INFORMATION →</Link></article>)}</div>
-      </section>
-
+      <section className="who-v2" aria-labelledby="who-title"><h2 id="who-title">WHO<br />WE ARE</h2><div className="who-v2-card"><p>Women’s Voices is a feminist organisation, established in 2013 and rooted in the Longsight area of Manchester, with a reach across Greater Manchester. We are by women, for women. We provide a safe, women-only, non-judgemental space where global majority women — women seeking asylum, refugees, and other marginalised women — can meet, learn, build confidence and find their voice.</p><p>Our mission is to enable women to achieve empowerment, equality and inclusion, to overcome the barriers holding them back, and to become ambassadors for other women — so that women’s voices are nurtured, heard and amplified. As a women’s organisation in the city where the suffragette movement began, we hold the word feminist deliberately: the forces that keep women down are political, and naming them is part of the work.</p><div className="who-v2-links"><Link href="/about#aims-and-vision">OUR AIMS →</Link><Link href="/contact">CONTACT US →</Link><Link href="/about#partners">OUR PARTNERS →</Link></div></div></section>
+      <section className="latest" aria-labelledby="what-we-do-title"><div className="section-head"><h2 id="what-we-do-title">WHAT WE DO</h2><Link href="/about#activities">VIEW ALL <b aria-hidden="true">→</b></Link></div><div className="news-grid">{programmes.map((item, index) => <article key={item.title}><div className="news-img"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" /><span>{String(index + 1).padStart(2, "0")}</span></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href}>MORE INFORMATION →</Link></article>)}</div></section>
       <section className="impact" aria-labelledby="activities-title"><h2 id="activities-title">OUR ACTIVITIES</h2><div className="pillar-grid">{activities.map((item, index) => <article key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><div className="pillar-media"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" /></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href}>DISCOVER →</Link></article>)}</div></section>
-
       <WhatGuidesUs />
-
-      <section className="meeting" aria-labelledby="vision-title">
-        <div className="meeting-copy"><h2 id="vision-title">EMPOWERMENT,<br />EQUALITY AND INCLUSION</h2><p>Our aim is to help break cycles of deprivation for Black, Asian, Minority Ethnic and Refugee women, while challenging barriers that prevent women from reaching their potential.</p><p>We strengthen women’s voice and influence so they can become ambassadors for other women and help change how women are viewed in communities and wider society.</p><Link href="/stories">READ OUR STORIES →</Link></div>
-        <div className="stats"><h3>WOMEN’S VOICES<br /><b>KEY DETAILS</b></h3><div><strong>2013</strong><span>ESTABLISHED</span></div><div><strong>50+</strong><span>RESEARCH FOCUS</span></div><div><strong>CIC</strong><span>COMMUNITY ORGANISATION</span></div></div>
-      </section>
-
-      <section className="partners" aria-labelledby="partners-title">
-        <p id="partners-title">SUPPORTED BY AND WORKING WITH</p>
-        <div>
-          <span className="partners-logo-box">
-            <Image
-              src="/logos/lloyds-bank-foundation.svg"
-              alt="Lloyds Bank Foundation"
-              width={300}
-              height={73}
-            />
-          </span>
-          <span className="partners-logo-box">
-            <Image
-              src="/logos/national-lottery-community-fund.svg"
-              alt="National Lottery Community Fund"
-              width={300}
-              height={98}
-            />
-          </span>
-          <span className="partners-logo-box">
-            <Image
-              src="/partners/mcc-logo.jpg"
-              alt="Manchester City Council"
-              width={330}
-              height={63}
-            />
-          </span>
-        </div>
-        <Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link>
-      </section>
-
+      <section className="meeting" aria-labelledby="vision-title"><div className="meeting-copy"><h2 id="vision-title">EMPOWERMENT,<br />EQUALITY AND INCLUSION</h2><p>Our aim is to help break cycles of deprivation for Black, Asian, Minority Ethnic and Refugee women, while challenging barriers that prevent women from reaching their potential.</p><p>We strengthen women’s voice and influence so they can become ambassadors for other women and help change how women are viewed in communities and wider society.</p><Link href="/stories">READ OUR STORIES →</Link></div><div className="stats"><h3>WOMEN’S VOICES<br /><b>KEY DETAILS</b></h3><div><strong>2013</strong><span>ESTABLISHED</span></div><div><strong>50+</strong><span>RESEARCH FOCUS</span></div><div><strong>CIC</strong><span>COMMUNITY ORGANISATION</span></div></div></section>
+      <section className="partners" aria-labelledby="partners-title"><p id="partners-title">SUPPORTED BY AND WORKING WITH</p><div><span className="partners-logo-box"><Image src="/logos/lloyds-bank-foundation.svg" alt="Lloyds Bank Foundation" width={300} height={73} /></span><span className="partners-logo-box"><Image src="/logos/national-lottery-community-fund.svg" alt="National Lottery Community Fund" width={300} height={98} /></span><span className="partners-logo-box"><Image src="/partners/mcc-logo.jpg" alt="Manchester City Council" width={330} height={63} /></span></div><Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link></section>
       <ResearchSpotlight /><ConversationCallout />
     </>
   );
