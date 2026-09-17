@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
   title: {
-    default: "Women’s Voices — Empowering women in our community",
+    default: "Women’s Voices: Empowering women in our community",
     template: "%s | Women’s Voices",
   },
   description:
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "/",
     siteName: SITE_NAME,
-    title: "Women’s Voices — Empowering women in our community",
+    title: "Women’s Voices: Empowering women in our community",
     description:
       "A safe and accessible place for women to meet, learn, build confidence and strengthen their independence.",
   },

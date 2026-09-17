@@ -9,7 +9,7 @@
   --pale-pink: #fff0f7;
   --font-site: var(--font-excon), Arial, sans-serif;
 
-  /* Type scale — keep every heading tier to one of these four sizes */
+  /* Type scale: keep every heading tier to one of these four sizes */
   --text-display: clamp(44px, 6vw, 88px);
   --text-h2: clamp(32px, 3.5vw, 52px);
   --text-h3: clamp(24px, 2.4vw, 30px);
@@ -543,7 +543,7 @@ section[id] {
   font-weight: 300;
 }
 
-/* What Guides Us — retains the approved homepage design */
+/* What Guides Us: retains the approved homepage design */
 .wgu-section {
   --wgu-pad: clamp(24px, 4vw, 68px);
   width: 100%;

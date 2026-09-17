@@ -40,8 +40,8 @@ export default function PrivacyPage() {
         <h2>Cookies and external services</h2>
         <p>
           The core website does not set advertising cookies. Links to external
-          services—including social networks, PDF documents and Google
-          Maps—are clearly identified. Those services apply their own privacy
+          services, including social networks, PDF documents and Google
+          Maps, are clearly identified. Those services apply their own privacy
           and cookie policies when you visit them.
         </p>
 

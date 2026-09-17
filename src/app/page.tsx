@@ -111,14 +111,14 @@ export default function Home() {
             Women’s Voices is a feminist organisation, established in 2013 and
             rooted in the Longsight area of Manchester, with a reach across
             Greater Manchester. We are by women, for women. We provide a safe,
-            women-only, non-judgemental space where global majority women —
-            women seeking asylum, refugees, and other marginalised women — can
-            meet, learn, build confidence and find their voice.
+            women-only, non-judgemental space where global majority women,
+            including women seeking asylum, refugees, and other marginalised
+            women, can meet, learn, build confidence and find their voice.
           </p>
           <p>
             Our mission is to enable women to achieve empowerment, equality
             and inclusion, to overcome the barriers holding them back, and to
-            become ambassadors for other women — so that women’s voices are
+            become ambassadors for other women, so that women’s voices are
             nurtured, heard and amplified. As a women’s organisation in the
             city where the suffragette movement began, we hold the word
             feminist deliberately: the forces that keep women down are
