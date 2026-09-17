@@ -7,6 +7,11 @@
   display: none;
 }
 
+/* Keep the existing purple treatment, but let more of the hero photography show through. */
+.hero .shade {
+  background: color-mix(in srgb, var(--deep) 38%, transparent);
+}
+
 @keyframes hero-media-slideshow {
   0%, 14% {
     background-image: url("/hero/hero-slide-1.jpg");
