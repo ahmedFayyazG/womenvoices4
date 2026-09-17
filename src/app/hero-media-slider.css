@@ -1,43 +1,68 @@
 .hero {
-  background-image: url("/hero/hero-slide-1.jpg");
-  animation: hero-media-slideshow 30s infinite;
+  background: var(--deep);
 }
 
 .hero video {
   display: none;
 }
 
-/* Keep the existing purple treatment, but let more of the hero photography show through. */
+.hero-media-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--deep);
+}
+
+.hero-media-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: hero-slide-fade 30s linear infinite;
+  will-change: opacity;
+}
+
+.hero-media-slide img {
+  object-fit: cover;
+  transform: scale(1.02);
+  animation: hero-slide-zoom 8s ease-out infinite alternate;
+  will-change: transform;
+}
+
 .hero .shade {
+  z-index: 1;
   background: color-mix(in srgb, var(--deep) 38%, transparent);
 }
 
-@keyframes hero-media-slideshow {
-  0%, 14% {
-    background-image: url("/hero/hero-slide-1.jpg");
-  }
-  17%, 30% {
-    background-image: url("/hero/hero-slide-2.jpg");
-  }
-  33%, 47% {
-    background-image: url("/hero/hero-slide-3.jpg");
-  }
-  50%, 64% {
-    background-image: url("/hero/hero-slide-4.jpg");
-  }
-  67%, 81% {
-    background-image: url("/hero/hero-slide-5.jpg");
-  }
-  84%, 97% {
-    background-image: url("/hero/hero-slide-6.jpg");
-  }
-  100% {
-    background-image: url("/hero/hero-slide-1.jpg");
-  }
+.hero .hero-center {
+  z-index: 2;
+}
+
+@keyframes hero-slide-fade {
+  0% { opacity: 0; }
+  2% { opacity: 1; }
+  15% { opacity: 1; }
+  18% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes hero-slide-zoom {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.075); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero {
+  .hero-media-slide {
     animation: none;
+    opacity: 0;
+  }
+
+  .hero-media-slide:first-child {
+    opacity: 1;
+  }
+
+  .hero-media-slide img {
+    animation: none;
+    transform: none;
   }
 }
