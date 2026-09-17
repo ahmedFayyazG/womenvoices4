@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { contact, SITE_NAME, SITE_URL, socialLinks } from "@/lib/site";
 import "./globals.css";
 import "./who-v2-visual.css";
+import "./hero-media-slider.css";
 
 const excon = localFont({
   src: "../fonts/Excon-Variable.woff2",
