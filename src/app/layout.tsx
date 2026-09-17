@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import PinkPageLoader from "@/components/PinkPageLoader";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { contact, SITE_NAME, SITE_URL, socialLinks } from "@/lib/site";
@@ -56,7 +55,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={excon.variable}>
       <body>
-        <PinkPageLoader background="#d94c86" minimumDuration={1500} />
         <SiteHeader />
         <main id="main-content">{children}</main>
         <SiteFooter />
