@@ -1885,3 +1885,94 @@ section[id] {
     animation: none !important;
   }
 }
+
+
+
+/* Consistent editorial image system for inner pages. */
+.story-image {
+  margin: 0;
+  padding: 0 7vw;
+  background: #fff;
+}
+
+.story-image > div {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #eee;
+}
+
+.story-image img {
+  object-fit: cover;
+}
+
+.story-image-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0 7vw;
+  background: #fff;
+}
+
+.story-image-row--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.story-image--small {
+  padding: 0;
+}
+
+.story-image--small > div {
+  aspect-ratio: 4 / 3;
+}
+
+/* Images work as deliberate pauses between content chapters. */
+.story-image + .content-section,
+.story-image-row + .content-section,
+.content-section + .story-image,
+.content-section + .story-image-row {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .story-image img,
+  .story-image-row img {
+    transition: transform .55s ease;
+  }
+
+  .story-image > div:hover img,
+  .story-image-row figure > div:hover img {
+    transform: scale(1.018);
+  }
+}
+
+@media (max-width: 900px) {
+  .story-image,
+  .story-image-row {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .story-image-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .story-image-row--two {
+    grid-template-columns: 1fr;
+  }
+
+  .story-image > div,
+  .story-image--small > div {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-image,
+  .story-image-row {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}

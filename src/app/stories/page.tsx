@@ -48,45 +48,38 @@ const testimonials = [
   }
 ];
 
-const storyBreaks = [
-  {
-    caption: "Women’s Voices community gatherings and events.",
-    photos: ["/gallery/event-18.jpg", "/gallery/event-11.jpg"],
-  },
-  {
-    caption: "Everyday moments of connection at the centre.",
-    photos: ["/gallery/event-06.jpg", "/gallery/event-14.jpg"],
-  },
-  {
-    caption: "Sharing skills, food and celebration together.",
-    photos: ["/gallery/event-16.jpg", "/gallery/event-22.jpg"],
-  },
+const storyBreaks: (readonly [string, string] | null)[] = [
+  ["/gallery/event-18.jpg", "/gallery/event-11.jpg"],
+  ["/gallery/event-06.jpg", "/gallery/event-14.jpg"],
+  null,
 ];
+
+const StoryImageRow = ({ photos }: { photos: readonly [string, string] }) => (
+  <div className="story-image-row story-image-row--two">
+    {photos.map((src) => (
+      <figure className="story-image story-image--small" key={src}>
+        <div>
+          <Image src={src} alt="Women’s Voices community life" fill sizes="(max-width: 900px) 100vw, 50vw" />
+        </div>
+      </figure>
+    ))}
+  </div>
+);
 
 export default function StoriesPage() {
   return <PageShell title="OUR STORIES" intro="First-hand stories of connection, confidence and change from women in our community.">
     <section className="stories-intro"><div className="stories-intro-inner"><span className="stories-kicker">In their own words · 2026</span><h2>Every woman arrives with her own story. Here, women share what belonging, learning and being heard has meant to them.</h2></div></section>
-    <section className="testimonials" aria-label="Women’s Voices testimonials">
-      {testimonials.map((testimonial, index) => <article className="testimonial" key={testimonial.name}>
-        <div className="testimonial-meta"><span className="testimonial-number">{String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span><h2>{testimonial.name}</h2><span className="testimonial-role">{testimonial.label}</span></div>
-        <div className="testimonial-copy">{testimonial.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
-        {storyBreaks[index] && (
-          <div className="image-break">
-            {storyBreaks[index].photos.map((src) => (
-              <div className="image-break-item" key={src}>
-                <Image
-                  src={src}
-                  alt="Women’s Voices community life"
-                  fill
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                />
-              </div>
-            ))}
-            <p className="image-break-caption">{storyBreaks[index].caption}</p>
-          </div>
-        )}
-      </article>)}
-    </section>
+    {testimonials.map((testimonial, index) => (
+      <div key={testimonial.name}>
+        <section className="testimonials" aria-label={`${testimonial.name}’s story`}>
+          <article className={index % 2 === 1 ? "testimonial testimonial--alt" : "testimonial"}>
+            <div className="testimonial-meta"><span className="testimonial-number">{String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span><h2>{testimonial.name}</h2><span className="testimonial-role">{testimonial.label}</span></div>
+            <div className="testimonial-copy">{testimonial.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
+          </article>
+        </section>
+        {storyBreaks[index] && <StoryImageRow photos={storyBreaks[index]!} />}
+      </div>
+    ))}
     <section className="stories-closing"><span>Women supporting women</span><div><h2>A safe place to meet, learn, build confidence and move forward together.</h2><Link href="/contact">Connect with Women’s Voices →</Link></div></section>
   </PageShell>;
 }
