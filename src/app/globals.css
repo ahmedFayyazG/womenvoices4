@@ -2162,3 +2162,17 @@ section[id] {
     max-height: 450px;
   }
 }
+
+/* Keep desktop dropdown visually connected to its trigger for reliable hover navigation. */
+.mega {
+  z-index: 50;
+  transform: translateY(-12px);
+  visibility: hidden;
+}
+.mega.show {
+  visibility: visible;
+  transform: translateY(0);
+}
+.site-header {
+  z-index: 100;
+}
