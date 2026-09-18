@@ -1997,3 +1997,24 @@ section[id] {
     max-height: 420px;
   }
 }
+
+/* Match the compact Training photography scale across all image-led inner pages. */
+.inner-story-image {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+.inner-story-image > div {
+  aspect-ratio: 16 / 7;
+  max-height: 500px;
+}
+.story-image-row .inner-story-image > div {
+  aspect-ratio: 4 / 3;
+  max-height: 360px;
+}
+@media (max-width: 900px) {
+  .inner-story-image > div,
+  .story-image-row .inner-story-image > div {
+    aspect-ratio: 4 / 3;
+    max-height: 420px;
+  }
+}
