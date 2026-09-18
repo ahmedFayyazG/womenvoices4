@@ -126,7 +126,6 @@ export function SiteHeader() {
           </Link>
           <Link className="contact-cta" href="/contact" aria-label="Contact Women’s Voices">
             <span className="sr-only">Contact</span>
-            <b aria-hidden="true">→</b>
           </Link>
         </nav>
 
@@ -199,7 +198,7 @@ export function SiteHeader() {
                     >
                       <span className={`mobile-chevron ${mobileSubmenu === menu ? "open" : ""}`} aria-hidden="true">⌄</span>
                     </button>
-                  ) : <b aria-hidden="true">→</b>}
+                  ) :}
                 </div>
                 {menu ? (
                   <div
@@ -217,7 +216,6 @@ export function SiteHeader() {
                         }}
                       >
                         {subitem.label}
-                        <b aria-hidden="true">→</b>
                       </Link>
                     ))}
                   </div>
