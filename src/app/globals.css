@@ -2337,3 +2337,21 @@ section[id] {
     color: var(--lime);
   }
 }
+
+@media (max-width: 1180px) {
+  .mobile-submenu-toggle {
+    font-size: 0;
+  }
+  .mobile-chevron {
+    display: inline-block;
+    color: var(--lime);
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1;
+    transform: translateY(-2px);
+    transition: transform .25s ease;
+  }
+  .mobile-chevron.open {
+    transform: translateY(2px) rotate(180deg);
+  }
+}
