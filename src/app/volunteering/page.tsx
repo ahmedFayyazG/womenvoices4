@@ -2,90 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
-
-export const metadata: Metadata = {
-  title: "Volunteering",
-  description:
-    "Volunteer with Women’s Voices in Manchester and share skills, support drop-ins, help at events or contribute to community projects.",
-  alternates: { canonical: "/volunteering" },
-};
-
-const opportunities = [
-  "Share skills, knowledge and experience",
-  "Support weekly drop-in sessions",
-  "Help organise activities, trips and events",
-  "Contribute to arts, crafts, sewing and food-growing sessions",
-  "Support fundraising and community outreach",
-  "Help raise the profile of Women’s Voices CIC",
-];
-
-const volunteeringPhotos = [
-  "/gallery/event-26.jpg",
-  "/gallery/event-23.jpg",
-  "/gallery/event-27.jpg",
-  "/gallery/event-24.jpg",
-];
-
-export default function VolunteeringPage() {
-  return (
-    <PageShell
-      title="VOLUNTEERING"
-      intro="Volunteers are central to our work, helping Women’s Voices operate day to day and creating a culture that supports and empowers women."
-    >
-      <section className="content-section split-content">
-        <div>
-          <span className="content-number">01</span>
-          <h2>SHARE SKILLS. BUILD CONFIDENCE.</h2>
-        </div>
-        <div className="prose">
-          <p>
-            Volunteers work alongside staff to help deliver services, welcome
-            women into the centre and make community activities possible.
-          </p>
-          <p>
-            Many former service users go on to volunteer themselves, sharing
-            their experience and strengthening the support available to others.
-          </p>
-        </div>
-      </section>
-
-      <section className="content-section content-dark">
-        <span className="content-number">02</span>
-        <h2>WAYS TO CONTRIBUTE</h2>
-        <ul className="opportunity-list">
-          {opportunities.map((item, index) => (
-            <li key={item}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="content-section">
-        <span className="content-number">03</span>
-        <h2>VOLUNTEERING IN PICTURES</h2>
-        <div className="photo-gallery">
-          {volunteeringPhotos.map((src, index) => (
-            <div className="photo-gallery-item" key={src}>
-              <Image
-                src={src}
-                alt="Volunteers taking part in a Women’s Voices community session"
-                fill
-                sizes="(max-width: 900px) 50vw, 25vw"
-                priority={index === 0}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="content-cta">
-        <div>
-          <h2>TELL US ABOUT YOUR INTERESTS AND AVAILABILITY</h2>
-        </div>
-        <Link href="/contact">BECOME A VOLUNTEER →</Link>
-      </section>
-    </PageShell>
-  );
-}
+export const metadata:Metadata={title:"Volunteering",description:"Volunteer with Women’s Voices in Manchester and share skills, support drop-ins, help at events or contribute to community projects.",alternates:{canonical:"/volunteering"}};
+const opportunities=["Share skills, knowledge and experience","Support weekly drop-in sessions","Help organise activities, trips and events","Contribute to arts, crafts, sewing and food-growing sessions","Support fundraising and community outreach","Help raise the profile of Women’s Voices CIC"];
+const photos=["/gallery/event-26.jpg","/gallery/event-23.jpg","/gallery/event-27.jpg","/gallery/event-24.jpg"];
+export default function VolunteeringPage(){return <PageShell title="VOLUNTEERING" intro="Volunteers are central to our work, helping Women’s Voices operate day to day and creating a culture that supports and empowers women.">
+<section className="content-section split-content"><div><span className="content-number">01</span><h2>SHARE SKILLS. BUILD CONFIDENCE.</h2></div><div className="prose"><p>Volunteers work alongside staff to help deliver services, welcome women into the centre and make community activities possible.</p><p>Many former service users go on to volunteer themselves, sharing their experience and strengthening the support available to others.</p></div></section>
+<div className="content-photo-break content-photo-break--right"><Image src={photos[0]} alt="Volunteers taking part in a Women’s Voices community session" fill sizes="(max-width:900px) 92vw,72vw" /></div>
+<section className="content-section content-dark"><span className="content-number">02</span><h2>WAYS TO CONTRIBUTE</h2><ul className="opportunity-list">{opportunities.map((item,index)=><li key={item}><span>{String(index+1).padStart(2,"0")}</span>{item}</li>)}</ul></section>
+<div className="content-photo-pair"><div><Image src={photos[1]} alt="Women volunteering together" fill sizes="(max-width:900px) 92vw,45vw" /></div><div><Image src={photos[2]} alt="Community volunteers at Women’s Voices" fill sizes="(max-width:900px) 92vw,45vw" /></div></div>
+<section className="content-section"><span className="content-number">03</span><h2>PART OF THE COMMUNITY</h2><div className="prose"><p>Volunteering creates opportunities to contribute, meet people, develop experience and help other women feel welcome and supported.</p></div></section>
+<div className="content-photo-break content-photo-break--left"><Image src={photos[3]} alt="Women’s Voices volunteers and community members" fill sizes="(max-width:900px) 92vw,72vw" /></div>
+<section className="content-cta"><div><h2>TELL US ABOUT YOUR INTERESTS AND AVAILABILITY</h2></div><Link href="/contact">BECOME A VOLUNTEER →</Link></section>
+</PageShell>}
