@@ -19,13 +19,6 @@ const opportunities = [
   "Help raise the profile of Women’s Voices CIC",
 ];
 
-const volunteeringPhotos = [
-  "/gallery/event-26.jpg",
-  "/gallery/event-23.jpg",
-  "/gallery/event-27.jpg",
-  "/gallery/event-24.jpg",
-];
-
 export default function VolunteeringPage() {
   return (
     <PageShell
@@ -33,18 +26,37 @@ export default function VolunteeringPage() {
       intro="Volunteers are central to our work, helping Women’s Voices operate day to day and creating a culture that supports and empowers women."
     >
       <section className="content-section split-content">
-        <div>
-          <span className="content-number">01</span>
-          <h2>SHARE SKILLS. BUILD CONFIDENCE.</h2>
+        <div className="split-media">
+          <Image
+            src="/gallery/event-24.jpg"
+            alt="Volunteers and community members meeting at Women’s Voices"
+            fill
+            sizes="(max-width: 900px) 100vw, 45vw"
+            priority
+          />
         </div>
         <div className="prose">
+          <span className="content-number">01</span>
+          <h2>SHARE SKILLS. BUILD CONFIDENCE.</h2>
           <p>
             Volunteers work alongside staff to help deliver services, welcome
             women into the centre and make community activities possible.
+            Every drop-in, workshop and event we run depends on people giving
+            their time, whether that is an hour a week or a regular
+            commitment.
           </p>
           <p>
             Many former service users go on to volunteer themselves, sharing
-            their experience and strengthening the support available to others.
+            their experience and strengthening the support available to
+            others. For some, volunteering is the first step back into
+            structured activity after a difficult period; for others, it is a
+            way to put existing professional skills to use in a new country.
+          </p>
+          <p>
+            Whatever background you bring, we match opportunities to your
+            interests and availability, and we always make sure new
+            volunteers are properly welcomed, trained and supported before
+            taking anything on alone.
           </p>
         </div>
       </section>
@@ -60,23 +72,56 @@ export default function VolunteeringPage() {
             </li>
           ))}
         </ul>
+        <div className="image-break">
+          <div className="image-break-item">
+            <Image
+              src="/gallery/event-23.jpg"
+              alt="Volunteers taking part in a craft session"
+              fill
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+          </div>
+          <div className="image-break-item">
+            <Image
+              src="/gallery/event-26.jpg"
+              alt="A volunteer smiling during a community craft session"
+              fill
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+          </div>
+          <p className="image-break-caption">Volunteers leading craft and drop-in sessions at Women’s Voices.</p>
+        </div>
       </section>
 
       <section className="content-section">
         <span className="content-number">03</span>
-        <h2>VOLUNTEERING IN PICTURES</h2>
-        <div className="photo-gallery">
-          {volunteeringPhotos.map((src, index) => (
-            <div className="photo-gallery-item" key={src}>
-              <Image
-                src={src}
-                alt="Volunteers taking part in a Women’s Voices community session"
-                fill
-                sizes="(max-width: 900px) 50vw, 25vw"
-                priority={index === 0}
-              />
-            </div>
-          ))}
+        <h2>FROM SERVICE USER TO VOLUNTEER</h2>
+        <div className="prose">
+          <p>
+            Some of our most experienced volunteers first came to Women’s
+            Voices looking for support themselves, whether that was English
+            classes, a listening ear, or simply somewhere to belong. As
+            confidence grew, many chose to give something back, coordinating
+            drop-ins, facilitating cooking sessions or helping run events for
+            other women going through what they once experienced.
+          </p>
+          <p>
+            It is this cycle, of support offered, received and then passed
+            on, that keeps Women’s Voices rooted in real community rather
+            than a service delivered from the outside. If you are looking for
+            a way to use your time, skills or lived experience meaningfully,
+            there is very likely a role here for you.
+          </p>
+        </div>
+        <div className="image-break image-break--single">
+          <div className="image-break-item">
+            <Image
+              src="/gallery/event-27.jpg"
+              alt="Finished craft pieces made during a volunteer-led session"
+              fill
+              sizes="100vw"
+            />
+          </div>
         </div>
       </section>
 

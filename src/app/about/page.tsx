@@ -3,13 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 
-const activityPhotos = [
-  "/gallery/event-21.jpg",
-  "/gallery/event-29.jpg",
-  "/gallery/event-08.jpg",
-  "/gallery/event-06.jpg",
-];
-
 export const metadata: Metadata = {
   title: "About Us",
   description:
@@ -45,11 +38,18 @@ export default function AboutPage() {
       intro="A women-led organisation creating opportunities for connection, confidence, learning and collective action in Longsight and across Greater Manchester."
     >
       <section id="who-we-are" className="content-section split-content">
-        <div>
-          <span className="content-number">01</span>
-          <h2>A SAFE PLACE TO MEET, LEARN AND GROW</h2>
+        <div className="split-media">
+          <Image
+            src="/gallery/event-22.jpg"
+            alt="Women gathered at a Women’s Voices community session"
+            fill
+            sizes="(max-width: 900px) 100vw, 45vw"
+            priority
+          />
         </div>
         <div className="prose">
+          <span className="content-number">01</span>
+          <h2>A SAFE PLACE TO MEET, LEARN AND GROW</h2>
           <p>
             Women’s Voices is a not-for-profit organisation established in 2013
             and based in Longsight, Manchester. We work with women seeking
@@ -58,17 +58,24 @@ export default function AboutPage() {
           <p>
             We provide a safe and accessible environment where women can meet,
             learn new skills, develop resilience and confidence, and strengthen
-            their independence.
+            their independence. Every session, from a first English class to a
+            weekly drop-in, is built around the understanding that trust takes
+            time, and that women arrive with different needs, histories and
+            strengths.
+          </p>
+          <p>
+            Over more than a decade, that consistency has turned a small local
+            project into a wider network of support, reaching women across
+            Longsight and Greater Manchester who might otherwise struggle to
+            find a space that feels like theirs.
           </p>
         </div>
       </section>
 
       <section id="aims-and-vision" className="content-section content-tint split-content">
-        <div>
+        <div className="prose">
           <span className="content-number">02</span>
           <h2>OUR AIMS AND VISION</h2>
-        </div>
-        <div className="prose">
           <p>
             Our aim is to challenge the barriers that prevent Black and
             minoritised women, refugee women and women seeking asylum from
@@ -79,6 +86,20 @@ export default function AboutPage() {
             ambassadors for other women and help create empowerment, equality
             and inclusion in their communities and wider society.
           </p>
+          <p>
+            That vision is shaped directly by the women who use our services.
+            Community research, informal feedback and honest conversation
+            guide what we prioritise each year, so our work responds to real,
+            lived need rather than assumptions made on women’s behalf.
+          </p>
+        </div>
+        <div className="split-media">
+          <Image
+            src="/gallery/event-21.jpg"
+            alt="A Women’s Voices community consultation session"
+            fill
+            sizes="(max-width: 900px) 100vw, 45vw"
+          />
         </div>
       </section>
 
@@ -93,6 +114,16 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+        <div className="image-break image-break--single">
+          <div className="image-break-item">
+            <Image
+              src="/gallery/event-29.jpg"
+              alt="A Women’s Voices activity planning session"
+              fill
+              sizes="100vw"
+            />
+          </div>
+        </div>
       </section>
 
       <section id="activities" className="content-section content-dark">
@@ -100,33 +131,44 @@ export default function AboutPage() {
         <h2>OUR ACTIVITIES</h2>
         <div className="content-card-grid">
           <article>
+            <div className="card-media">
+              <Image
+                src="/gallery/event-28.jpg"
+                alt="Training session at Women’s Voices"
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+            </div>
             <h3>Training</h3>
             <p>Practical and accredited learning that supports confidence, communication and opportunity.</p>
             <Link href="/training">Explore training →</Link>
           </article>
           <article>
+            <div className="card-media">
+              <Image
+                src="/gallery/event-26.jpg"
+                alt="Volunteers at a Women’s Voices session"
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+            </div>
             <h3>Volunteering</h3>
             <p>Meaningful ways to share skills, support weekly activities and contribute to community life.</p>
             <Link href="/volunteering">Explore volunteering →</Link>
           </article>
           <article>
+            <div className="card-media">
+              <Image
+                src="/gallery/event-11.jpg"
+                alt="A Women’s Voices community celebration"
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+              />
+            </div>
             <h3>Community</h3>
             <p>Welcoming spaces for advice, wellbeing, creativity, cultural events and shared meals.</p>
             <Link href="/contact">Visit the centre →</Link>
           </article>
-        </div>
-        <div className="photo-gallery">
-          {activityPhotos.map((src, index) => (
-            <div className="photo-gallery-item" key={src}>
-              <Image
-                src={src}
-                alt="Women's Voices activities and community sessions"
-                fill
-                sizes="(max-width: 900px) 50vw, 25vw"
-                priority={index === 0}
-              />
-            </div>
-          ))}
         </div>
       </section>
 

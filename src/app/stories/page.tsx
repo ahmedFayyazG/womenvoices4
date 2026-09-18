@@ -48,13 +48,19 @@ const testimonials = [
   }
 ];
 
-const communityPhotos = [
-  "/gallery/event-18.jpg",
-  "/gallery/event-11.jpg",
-  "/gallery/event-06.jpg",
-  "/gallery/event-14.jpg",
-  "/gallery/event-16.jpg",
-  "/gallery/event-22.jpg",
+const storyBreaks = [
+  {
+    caption: "Women’s Voices community gatherings and events.",
+    photos: ["/gallery/event-18.jpg", "/gallery/event-11.jpg"],
+  },
+  {
+    caption: "Everyday moments of connection at the centre.",
+    photos: ["/gallery/event-06.jpg", "/gallery/event-14.jpg"],
+  },
+  {
+    caption: "Sharing skills, food and celebration together.",
+    photos: ["/gallery/event-16.jpg", "/gallery/event-22.jpg"],
+  },
 ];
 
 export default function StoriesPage() {
@@ -64,24 +70,22 @@ export default function StoriesPage() {
       {testimonials.map((testimonial, index) => <article className="testimonial" key={testimonial.name}>
         <div className="testimonial-meta"><span className="testimonial-number">{String(index + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}</span><h2>{testimonial.name}</h2><span className="testimonial-role">{testimonial.label}</span></div>
         <div className="testimonial-copy">{testimonial.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
-      </article>)}
-    </section>
-    <section className="content-section">
-      <span className="content-number">02</span>
-      <h2>COMMUNITY LIFE IN PICTURES</h2>
-      <div className="photo-gallery">
-        {communityPhotos.map((src, index) => (
-          <div className="photo-gallery-item" key={src}>
-            <Image
-              src={src}
-              alt="Women's Voices community event"
-              fill
-              sizes="(max-width: 900px) 50vw, 33vw"
-              priority={index === 0}
-            />
+        {storyBreaks[index] && (
+          <div className="image-break">
+            {storyBreaks[index].photos.map((src) => (
+              <div className="image-break-item" key={src}>
+                <Image
+                  src={src}
+                  alt="Women’s Voices community life"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                />
+              </div>
+            ))}
+            <p className="image-break-caption">{storyBreaks[index].caption}</p>
           </div>
-        ))}
-      </div>
+        )}
+      </article>)}
     </section>
     <section className="stories-closing"><span>Women supporting women</span><div><h2>A safe place to meet, learn, build confidence and move forward together.</h2><Link href="/contact">Connect with Women’s Voices →</Link></div></section>
   </PageShell>;
