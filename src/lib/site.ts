@@ -69,6 +69,7 @@ export const primaryNavigation: NavigationItem[] = [
   { label: "VOLUNTEERING", href: "/volunteering" },
   { label: "REPORTS", href: "/reports", menu: "REPORTS" },
   { label: "STORIES", href: "/stories" },
+  { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT", href: "/contact", menu: "CONTACT" },
 ];
 
@@ -79,6 +80,7 @@ export const siteRoutes = [
   "/volunteering",
   "/reports",
   "/stories",
+  "/gallery",
   "/contact",
   "/support",
   "/privacy",
