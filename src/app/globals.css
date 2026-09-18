@@ -2018,3 +2018,30 @@ section[id] {
     max-height: 420px;
   }
 }
+
+/* Volunteering uses a tighter image scale so photography supports, rather than dominates, the content. */
+.volunteering-story-image {
+  width: min(100%, 980px);
+  margin-inline: auto;
+}
+.volunteering-story-image > div {
+  aspect-ratio: 16 / 6;
+  max-height: 370px;
+}
+.story-image-row .volunteering-story-image {
+  width: 100%;
+}
+.story-image-row .volunteering-story-image > div {
+  aspect-ratio: 16 / 9;
+  max-height: 300px;
+}
+@media (max-width: 900px) {
+  .volunteering-story-image {
+    width: 100%;
+  }
+  .volunteering-story-image > div,
+  .story-image-row .volunteering-story-image > div {
+    aspect-ratio: 4 / 3;
+    max-height: 360px;
+  }
+}
