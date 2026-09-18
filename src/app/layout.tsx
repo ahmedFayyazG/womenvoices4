@@ -31,6 +31,17 @@ export const metadata: Metadata = {
     "community training Manchester",
   ],
   alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -63,20 +74,49 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "NonprofitOrganization",
-              name: SITE_NAME,
-              url: SITE_URL,
-              email: contact.email,
-              telephone: contact.phoneHref,
-              foundingDate: "2013",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Burhan Centre, First Floor, 81 Beresford Road",
-                addressLocality: "Manchester",
-                postalCode: "M13 0GX",
-                addressCountry: "GB",
-              },
-              sameAs: socialLinks.map((item) => item.href),
+              "@graph": [
+                {
+                  "@type": "NonprofitOrganization",
+                  "@id": `${SITE_URL}/#organization`,
+                  name: SITE_NAME,
+                  url: SITE_URL,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${SITE_URL}/icon.png`,
+                  },
+                  email: contact.email,
+                  telephone: contact.phoneHref,
+                  foundingDate: "2013",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Burhan Centre, First Floor, 81 Beresford Road",
+                    addressLocality: "Manchester",
+                    addressRegion: "Greater Manchester",
+                    postalCode: "M13 0GX",
+                    addressCountry: "GB",
+                  },
+                  areaServed: [
+                    { "@type": "City", name: "Manchester" },
+                    { "@type": "AdministrativeArea", name: "Greater Manchester" },
+                  ],
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    telephone: contact.phoneHref,
+                    email: contact.email,
+                    contactType: "general enquiries",
+                    availableLanguage: "English",
+                  },
+                  sameAs: socialLinks.map((item) => item.href),
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_URL}/#website`,
+                  url: SITE_URL,
+                  name: SITE_NAME,
+                  publisher: { "@id": `${SITE_URL}/#organization` },
+                  inLanguage: "en-GB",
+                },
+              ],
             }),
           }}
         />
