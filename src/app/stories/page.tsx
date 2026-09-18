@@ -57,7 +57,7 @@ const storyBreaks: (readonly [string, string] | null)[] = [
 const StoryImageRow = ({ photos }: { photos: readonly [string, string] }) => (
   <div className="story-image-row story-image-row--two">
     {photos.map((src) => (
-      <figure className="story-image story-image--small" key={src}>
+      <figure className="story-image story-image--small inner-story-image" key={src}>
         <div>
           <Image src={src} alt="Women’s Voices community life" fill sizes="(max-width: 900px) 100vw, 50vw" />
         </div>

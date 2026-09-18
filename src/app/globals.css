@@ -1976,3 +1976,72 @@ section[id] {
     padding-left: 20px;
   }
 }
+
+/* Training: keep in-content photography present without overpowering the copy. */
+.training-story-image {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+.training-story-image > div {
+  aspect-ratio: 16 / 7;
+  max-height: 500px;
+}
+.story-image-row .training-story-image > div {
+  aspect-ratio: 4 / 3;
+  max-height: 360px;
+}
+@media (max-width: 900px) {
+  .training-story-image > div,
+  .story-image-row .training-story-image > div {
+    aspect-ratio: 4 / 3;
+    max-height: 420px;
+  }
+}
+
+/* Match the compact Training photography scale across all image-led inner pages. */
+.inner-story-image {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+.inner-story-image > div {
+  aspect-ratio: 16 / 7;
+  max-height: 500px;
+}
+.story-image-row .inner-story-image > div {
+  aspect-ratio: 4 / 3;
+  max-height: 360px;
+}
+@media (max-width: 900px) {
+  .inner-story-image > div,
+  .story-image-row .inner-story-image > div {
+    aspect-ratio: 4 / 3;
+    max-height: 420px;
+  }
+}
+
+/* Volunteering uses a tighter image scale so photography supports, rather than dominates, the content. */
+.volunteering-story-image {
+  width: min(100%, 980px);
+  margin-inline: auto;
+}
+.volunteering-story-image > div {
+  aspect-ratio: 16 / 6;
+  max-height: 370px;
+}
+.story-image-row .volunteering-story-image {
+  width: 100%;
+}
+.story-image-row .volunteering-story-image > div {
+  aspect-ratio: 16 / 9;
+  max-height: 300px;
+}
+@media (max-width: 900px) {
+  .volunteering-story-image {
+    width: 100%;
+  }
+  .volunteering-story-image > div,
+  .story-image-row .volunteering-story-image > div {
+    aspect-ratio: 4 / 3;
+    max-height: 360px;
+  }
+}
