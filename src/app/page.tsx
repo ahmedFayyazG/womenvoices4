@@ -3,9 +3,9 @@ import Link from "next/link";
 import { contact } from "@/lib/site";
 
 const programmes = [
-  { image: "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (13).jpeg", title: "TRAINING", href: "/training", description: "We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating." },
-  { image: "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (14).jpeg", title: "VOLUNTEERING", href: "/volunteering", description: "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves." },
-  { image: "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (15).jpeg", title: "COMMUNITY", href: "/about#activities", description: "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide." },
+  { image: "/cards1/ChatGPT Image Sep 18, 2026, 05_19_34 PM.png", title: "TRAINING", href: "/training", description: "We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating." },
+  { image: "/cards1/ChatGPT Image Sep 18, 2026, 05_20_33 PM.png", title: "VOLUNTEERING", href: "/volunteering", description: "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves." },
+  { image: "/cards1/ChatGPT Image Sep 18, 2026, 05_23_03 PM.png", title: "COMMUNITY", href: "/about#activities", description: "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide." },
 ];
 
 const activities = [
@@ -33,12 +33,12 @@ const activities = [
 ];
 
 const heroSlides = [
-  "/hero/hero-slide-1.jpg",
-  "/hero/hero-slide-2.jpg",
+  "/hero/ChatGPT Image Sep 18, 2026, 04_35_17 PM.png",
+  "/hero/WhatsApp Image 2026-09-16 at 2.26.10 pm.jpeg",
+  "/hero/WhatsApp Image 2026-09-18 at 12.17.28 pm (6).jpeg",
   "/hero/hero-slide-3.jpg",
   "/hero/hero-slide-4.jpg",
   "/hero/hero-slide-5.jpg",
-  "/hero/hero-slide-6.jpg",
 ];
 
 const values = [
