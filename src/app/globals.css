@@ -2045,3 +2045,120 @@ section[id] {
     max-height: 360px;
   }
 }
+
+/* 2026 inner-page photography treatment — soft, branded and intentionally spaced. */
+.story-image,
+.inner-story-image,
+.training-story-image,
+.volunteering-story-image {
+  padding-top: clamp(28px, 4vw, 58px);
+  padding-bottom: clamp(28px, 4vw, 58px);
+}
+
+.story-image > div,
+.inner-story-image > div,
+.training-story-image > div,
+.volunteering-story-image > div {
+  border-radius: 26px;
+  box-shadow:
+    0 22px 55px rgba(54, 20, 70, 0.12),
+    0 3px 12px rgba(54, 20, 70, 0.07);
+  isolation: isolate;
+}
+
+/* Small theme accent gives photos a designed Women’s Voices feel without redesigning sections. */
+.story-image > div::after,
+.inner-story-image > div::after,
+.training-story-image > div::after,
+.volunteering-story-image > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.32);
+}
+
+.story-image-row {
+  gap: clamp(16px, 2vw, 26px);
+  padding-top: clamp(28px, 4vw, 58px);
+  padding-bottom: clamp(28px, 4vw, 58px);
+}
+
+.story-image-row .story-image {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.story-image-row .story-image > div {
+  border-radius: 22px;
+}
+
+.content-section + .story-image,
+.content-section + .story-image-row {
+  background:
+    radial-gradient(circle at 12% 25%, rgba(217,76,134,.08), transparent 24%),
+    radial-gradient(circle at 90% 78%, rgba(122,154,74,.07), transparent 22%),
+    #fff;
+}
+
+.story-image + .content-section,
+.story-image-row + .content-section {
+  border-top: 1px solid rgba(54,20,70,.05);
+}
+
+@media (max-width: 900px) {
+  .story-image,
+  .inner-story-image,
+  .training-story-image,
+  .volunteering-story-image,
+  .story-image-row {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .story-image > div,
+  .inner-story-image > div,
+  .training-story-image > div,
+  .volunteering-story-image > div {
+    border-radius: 20px;
+    box-shadow: 0 14px 36px rgba(54,20,70,.11);
+  }
+
+  .story-image-row .story-image {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Slightly taller inner-page photography. */
+.inner-story-image > div,
+.training-story-image > div {
+  aspect-ratio: 16 / 7.8;
+  max-height: 540px;
+}
+.volunteering-story-image > div {
+  aspect-ratio: 16 / 7;
+  max-height: 420px;
+}
+.story-image-row .inner-story-image > div,
+.story-image-row .training-story-image > div {
+  aspect-ratio: 4 / 3.2;
+  max-height: 390px;
+}
+.story-image-row .volunteering-story-image > div {
+  aspect-ratio: 16 / 10;
+  max-height: 330px;
+}
+@media (max-width: 900px) {
+  .inner-story-image > div,
+  .training-story-image > div,
+  .volunteering-story-image > div,
+  .story-image-row .inner-story-image > div,
+  .story-image-row .training-story-image > div,
+  .story-image-row .volunteering-story-image > div {
+    aspect-ratio: 4 / 3.25;
+    max-height: 450px;
+  }
+}
