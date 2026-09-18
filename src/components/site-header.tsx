@@ -198,7 +198,7 @@ export function SiteHeader() {
                     >
                       <span className={`mobile-chevron ${mobileSubmenu === menu ? "open" : ""}`} aria-hidden="true">⌄</span>
                     </button>
-                  ) :}
+                  ) : null}
                 </div>
                 {menu ? (
                   <div
