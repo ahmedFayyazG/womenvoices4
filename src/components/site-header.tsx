@@ -12,6 +12,7 @@ import {
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<MenuKey | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLElement>(null);
 
@@ -173,18 +174,57 @@ export function SiteHeader() {
         aria-hidden={!mobileOpen}
       >
         <div className="drawer-in">
-          {primaryNavigation.map((item, index) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              tabIndex={mobileOpen ? 0 : -1}
-              onClick={() => setMobileOpen(false)}
-            >
-              <em>{String(index + 1).padStart(2, "0")}</em>
-              {item.label}
-              <b aria-hidden="true">→</b>
-            </Link>
-          ))}
+          {primaryNavigation.map((item, index) => {
+            const menu = item.menu;
+            return (
+              <div className="mobile-nav-item" key={item.label}>
+                <div className="mobile-nav-row">
+                  <Link
+                    href={item.href}
+                    tabIndex={mobileOpen ? 0 : -1}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <em>{String(index + 1).padStart(2, "0")}</em>
+                    {item.label}
+                  </Link>
+                  {menu ? (
+                    <button
+                      type="button"
+                      className="mobile-submenu-toggle"
+                      tabIndex={mobileOpen ? 0 : -1}
+                      aria-expanded={mobileSubmenu === menu}
+                      aria-controls={`mobile-submenu-${menu.toLowerCase()}`}
+                      aria-label={`${mobileSubmenu === menu ? "Close" : "Open"} ${item.label.toLowerCase()} submenu`}
+                      onClick={() => setMobileSubmenu((current) => current === menu ? null : menu)}
+                    >
+                      <span aria-hidden="true">{mobileSubmenu === menu ? "−" : "+"}</span>
+                    </button>
+                  ) : <b aria-hidden="true">→</b>}
+                </div>
+                {menu ? (
+                  <div
+                    id={`mobile-submenu-${menu.toLowerCase()}`}
+                    className={`mobile-submenu ${mobileSubmenu === menu ? "show" : ""}`}
+                  >
+                    {dropdownMenus[menu].map((subitem) => (
+                      <Link
+                        key={subitem.label}
+                        href={subitem.href}
+                        tabIndex={mobileOpen && mobileSubmenu === menu ? 0 : -1}
+                        onClick={() => {
+                          setMobileOpen(false);
+                          setMobileSubmenu(null);
+                        }}
+                      >
+                        {subitem.label}
+                        <b aria-hidden="true">→</b>
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
           <Link
             className="outline"
             href="/support"
