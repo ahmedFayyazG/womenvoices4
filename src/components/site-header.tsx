@@ -65,7 +65,7 @@ export function SiteHeader() {
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
-      <header className="site-header" onMouseLeave={() => setOpenMenu(null)}>
+      <header className="site-header">
         <Link className="mark" href="/" aria-label="Women’s Voices home">
           <Image
             src="/WVLogo-cropped.webp"
@@ -84,6 +84,11 @@ export function SiteHeader() {
                 className="nav-menu-item"
                 key={item.label}
                 onMouseEnter={() => setOpenMenu(menu)}
+                onMouseLeave={(event) => {
+                  const next = event.relatedTarget as Node | null;
+                  const mega = document.getElementById("desktop-mega-menu");
+                  if (!next || !mega?.contains(next)) setOpenMenu(null);
+                }}
               >
                 <Link href={item.href} onClick={() => setOpenMenu(null)}>
                   {item.label}
@@ -142,6 +147,8 @@ export function SiteHeader() {
           id="desktop-mega-menu"
           className={`mega ${openMenu ? "show" : ""}`}
           aria-hidden={!openMenu}
+          onMouseEnter={() => undefined}
+          onMouseLeave={() => setOpenMenu(null)}
         >
           {openMenu ? (
             <>

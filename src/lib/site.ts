@@ -33,7 +33,7 @@ export const socialLinks = [
   },
 ];
 
-export type MenuKey = "ABOUT" | "REPORTS" | "CONTACT";
+export type MenuKey = "ABOUT" | "REPORTS" | "GALLERY" | "CONTACT";
 export type NavigationItem = {
   label: string;
   href: string;
@@ -56,6 +56,10 @@ export const dropdownMenus: Record<
     { label: "Downloads", href: "/reports#downloads" },
     { label: "Publications", href: "/reports#publications" },
   ],
+  GALLERY: [
+    { label: "Community gallery", href: "/gallery" },
+    { label: "Events", href: "/events" },
+  ],
   CONTACT: [
     { label: "Send an enquiry", href: "/contact#enquiry-form" },
     { label: "Visit the Burhan Centre", href: "/contact#visit" },
@@ -69,6 +73,7 @@ export const primaryNavigation: NavigationItem[] = [
   { label: "VOLUNTEERING", href: "/volunteering" },
   { label: "REPORTS", href: "/reports", menu: "REPORTS" },
   { label: "STORIES", href: "/stories" },
+  { label: "GALLERY", href: "/gallery", menu: "GALLERY" },
   { label: "CONTACT", href: "/contact", menu: "CONTACT" },
 ];
 
@@ -79,6 +84,8 @@ export const siteRoutes = [
   "/volunteering",
   "/reports",
   "/stories",
+  "/gallery",
+  "/events",
   "/contact",
   "/support",
   "/privacy",

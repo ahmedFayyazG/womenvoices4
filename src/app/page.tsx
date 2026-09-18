@@ -3,9 +3,9 @@ import Link from "next/link";
 import { contact } from "@/lib/site";
 
 const programmes = [
-  { image: "/group-optimized.webp", title: "TRAINING", href: "/training", description: "We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating." },
-  { image: "/Nadia-optimized.webp", title: "VOLUNTEERING", href: "/volunteering", description: "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves." },
-  { image: "/wv-leadership-optimized.webp", title: "COMMUNITY", href: "/about#activities", description: "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide." },
+  { image: "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (13).jpeg", title: "TRAINING", href: "/training", description: "We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating." },
+  { image: "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (14).jpeg", title: "VOLUNTEERING", href: "/volunteering", description: "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves." },
+  { image: "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (15).jpeg", title: "COMMUNITY", href: "/about#activities", description: "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide." },
 ];
 
 const activities = [
