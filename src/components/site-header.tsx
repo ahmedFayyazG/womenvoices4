@@ -197,7 +197,7 @@ export function SiteHeader() {
                       aria-label={`${mobileSubmenu === menu ? "Close" : "Open"} ${item.label.toLowerCase()} submenu`}
                       onClick={() => setMobileSubmenu((current) => current === menu ? null : menu)}
                     >
-                      <span aria-hidden="true">{mobileSubmenu === menu ? "−" : "+"}</span>
+                      <span className={`mobile-chevron ${mobileSubmenu === menu ? "open" : ""}`} aria-hidden="true">⌄</span>
                     </button>
                   ) : <b aria-hidden="true">→</b>}
                 </div>
