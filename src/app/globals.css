@@ -303,6 +303,7 @@ section[id] {
   background: rgb(232 232 236 / 34%);
   backdrop-filter: blur(22px) saturate(1.35);
   -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  border-radius: 16px;
   box-shadow: 0 28px 80px color-mix(in srgb, var(--deep) 38%, transparent);
   color: #fff;
 }
