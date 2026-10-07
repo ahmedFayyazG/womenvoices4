@@ -287,7 +287,7 @@ section[id] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 24px 7vw;
   color: #fff;
 }
@@ -339,7 +339,7 @@ section[id] {
 
 .ticker {
   display: flex;
-  height: 60px;
+  height: 28px;
   align-items: center;
   overflow: hidden;
   color: #fff;
