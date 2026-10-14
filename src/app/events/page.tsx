@@ -6,12 +6,26 @@ import "../gallery/gallery.css";
 export const metadata: Metadata = { title:"Events", description:"Women’s Voices event posters and community announcements.", alternates:{canonical:"/events"} };
 const eventPosters = [
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (1).jpeg",
-  "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (10).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (11).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (12).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (19).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (8).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (9).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (1).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (2).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (3).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (4).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (5).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (6).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (7).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (8).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm (9).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.47 pm.jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.48 pm (1).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.48 pm (2).jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 10.00.48 pm.jpeg",
+  "/Images/WhatsApp Image 2026-10-07 at 9.58.38 pm (1).jpeg",
+  "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (2).jpeg",
 ];
 
 export default function EventsPage(){return <PageShell title="EVENTS" intro="Posters, announcements and moments from Women’s Voices events and community activities.">

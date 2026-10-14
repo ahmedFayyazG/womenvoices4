@@ -7,9 +7,9 @@ import "./globals.css";
 import "./who-v2-visual.css";
 import "./hero-media-slider.css";
 
-const excon = localFont({
-  src: "../fonts/Excon-Variable.woff2",
-  variable: "--font-excon",
+const cabinet = localFont({
+  src: "../fonts/CabinetGrotesk-Variable.woff2",
+  variable: "--font-cabinet",
   weight: "100 900",
   display: "swap",
 });
@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={excon.variable}>
+    <html lang="en" className={cabinet.variable}>
       <body>
         <SiteHeader />
         <main id="main-content">{children}</main>
