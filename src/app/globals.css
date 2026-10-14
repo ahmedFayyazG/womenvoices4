@@ -502,6 +502,43 @@ section[id] {
   margin-top: auto;
 }
 
+.news-grid .practice {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 0 22px;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--deep) 22%, transparent);
+}
+
+.news-grid .practice-text strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--deep);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.news-grid .practice p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.practice-img {
+  position: relative;
+  flex: 0 0 112px;
+  height: 112px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.practice-img img {
+  object-fit: cover;
+}
+
 .news-grid h3 {
   margin: 12px 0 10px;
   color: var(--purple);

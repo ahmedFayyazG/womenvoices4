@@ -46,11 +46,14 @@ describe("site structure", () => {
 });
 
 describe("homepage", () => {
-  test("shows What We Do with its three programmes, and What Guides Us", () => {
+  test("shows What We Do with its three programmes and activity rows, and What Guides Us", () => {
     render(<Home />);
     expect(screen.getByRole("heading", { name: "WHAT WE DO" })).toBeDefined();
-    for (const name of ["Training, Work and Skills Programmes", "Weekly Drop-Ins", "Events & Socials"]) {
+    for (const name of ["TRAINING", "VOLUNTEERING", "COMMUNITY"]) {
       expect(screen.getByRole("heading", { name })).toBeDefined();
+    }
+    for (const label of ["Training, Work and Skills Programmes", "Weekly Drop-Ins", "Events & Socials"]) {
+      expect(screen.getByText(label)).toBeDefined();
     }
     expect(screen.getByRole("heading", { name: "What Guides Us" })).toBeDefined();
   });

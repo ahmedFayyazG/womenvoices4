@@ -6,8 +6,33 @@ const programmes = [
   {
     image: "/what-we-do/training.jpg",
     position: "50% 55%",
-    title: "Training, Work and Skills Programmes",
+    title: "TRAINING",
     href: "/training",
+    description:
+      "We deliver accredited and practical courses, including ESOL, food hygiene, community interpreting, alongside workshops on food waste reduction, recycling, and healthy, affordable eating.",
+  },
+  {
+    image: "/what-we-do/volunteering.jpg",
+    position: "50% 40%",
+    title: "VOLUNTEERING",
+    href: "/volunteering",
+    description:
+      "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves.",
+  },
+  {
+    image: "/what-we-do/events-socials.jpg",
+    position: "50% 50%",
+    title: "COMMUNITY",
+    href: "/about#activities",
+    description:
+      "A space to celebrate sisterhood, where women from diverse cultures organise their own cultural events, share tea and meals, and access support that mainstream services often fail to provide.",
+  },
+];
+
+const activities = [
+  {
+    image: "/activities/learning-skills.jpg",
+    title: "Training, Work and Skills Programmes",
     description:
       "Women arrive here having been taught that their skills don’t count and their English isn’t enough. We build confidence, identify transferable skills, and open real pathways to employability and financial independence, because economic independence is how women break the cycles of deprivation and dependency that institutional barriers create.",
   },
@@ -15,7 +40,6 @@ const programmes = [
     image: "/what-we-do/weekly-dropins.jpg",
     position: "50% 45%",
     title: "Weekly Drop-Ins",
-    href: "/volunteering",
     description:
       "A women-only, women-led space, because trust is not given to systems that have failed us; it’s built between women. Here we share skills, build networks, share food, and name the barriers we face daily, racism, gender-based violence, isolation, and immigration systems that treat us as a problem to be managed rather than women with something to offer.",
   },
@@ -23,7 +47,6 @@ const programmes = [
     image: "/what-we-do/community.jpg",
     position: "50% 38%",
     title: "Events & Socials",
-    href: "/events",
     description:
       "Mainstream culture has long treated our heritage as something to leave behind. We bring communities together to reclaim it, strengthening cohesion and surfacing the history and journeys of global majority communities, creating a platform where our culture and heritage are not tolerated, but seen, valued, and celebrated.",
   },
@@ -86,7 +109,7 @@ export default function Home() {
     <section className="who-v2" aria-labelledby="who-title"><h2 id="who-title">WHO<br />WE ARE</h2><div className="who-v2-card"><p>Women’s Voices is a feminist organisation, established in 2013 and rooted in the Longsight area of Manchester, with a reach across Greater Manchester. We are by women, for women. We provide a safe, women-only, non-judgemental space where women from global majority communities including women seeking asylum and refugees can build confidence, gain new skills to develop pathways to employment and become the leaders rooted in grassroots community power.</p><p>As a women’s organisation in the city where the suffragette movement began, we hold the word feminist deliberately: the forces that keep women down are political, and naming them is part of the work. Our mission is to enable women to achieve empowerment, equality and inclusion, to overcome the barriers holding them back, and to become ambassadors for other women, so that women’s voices are nurtured, heard and amplified.</p><div className="who-v2-links"><Link href="/about#aims-and-vision">OUR AIMS →</Link><Link href="/contact">CONTACT US →</Link><Link href="/about#partners">OUR PARTNERS →</Link></div></div></section>
     <section className="latest" aria-labelledby="what-we-do-title">
       <div className="section-head"><h2 id="what-we-do-title">WHAT WE DO</h2><Link href="/about#activities">VIEW ALL <b aria-hidden="true">→</b></Link></div>
-      <div className="news-grid">{programmes.map((item, index) => <article key={item.title}><div className="news-img"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectPosition: item.position }} /><span>{String(index + 1).padStart(2, "0")}</span></div><h3>{item.title}</h3><p>{item.description}</p><Link href={item.href}>MORE INFORMATION →</Link></article>)}</div>
+      <div className="news-grid">{programmes.map((item, index) => <article key={item.title}><div className="news-img"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectPosition: item.position }} /><span>{String(index + 1).padStart(2, "0")}</span></div><h3>{item.title}</h3><p>{item.description}</p><div className="practice"><div className="practice-img"><Image src={activities[index].image} alt="" fill sizes="120px" style={{ objectPosition: activities[index].position }} /></div><div className="practice-text"><strong>{activities[index].title}</strong><p>{activities[index].description}</p></div></div><Link href={item.href}>MORE INFORMATION →</Link></article>)}</div>
     </section>
     <WhatGuidesUs />
     <section className="meeting" aria-labelledby="vision-title"><div className="meeting-copy"><h2 id="vision-title">EMPOWERMENT,<br />EQUALITY AND INCLUSION</h2><p>Our aim is to help break cycles of deprivation for Black, Asian, Minority Ethnic and Refugee women, while challenging barriers that prevent women from reaching their potential.</p><p>We strengthen women’s voice and influence so they can become ambassadors for other women and help change how women are viewed in communities and wider society.</p><Link href="/stories">READ OUR STORIES →</Link></div><div className="stats"><h3>WOMEN’S VOICES<br /><b>KEY DETAILS</b></h3><div><strong>15,000</strong><span>WOMEN IMPACTED</span></div><div><strong>2013</strong><span>ESTABLISHED</span></div><div><strong>50+</strong><span>RESEARCH FOCUS</span></div><div><strong>06</strong><span>RESEARCHERS TRAINED</span></div><div><strong>09</strong><span>KEY RECOMMENDATIONS</span></div><div><strong>CIC</strong><span>COMMUNITY ORGANISATION</span></div></div></section>
