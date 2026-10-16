@@ -6,8 +6,6 @@ import "./gallery.css";
 export const metadata: Metadata = { title:"Gallery", description:"Photos from Women’s Voices community activities, learning and events.", alternates:{canonical:"/gallery"} };
 const galleryImages = [
   "/Images/WhatsApp Image 2026-10-16 at 5.46.15 pm (10).jpeg",
-  "/Images/WhatsApp Image 2026-10-16 at 5.46.15 pm (11).jpeg",
-  "/Images/WhatsApp Image 2026-10-16 at 5.46.15 pm (3).jpeg",
   "/Images/WhatsApp Image 2026-10-16 at 5.46.15 pm (5).jpeg",
   "/Images/WhatsApp Image 2026-10-16 at 5.46.15 pm (6).jpeg",
   "/Images/WhatsApp Image 2026-10-16 at 5.46.15 pm (7).jpeg",
