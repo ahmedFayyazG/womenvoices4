@@ -689,7 +689,7 @@ section[id] {
 .home-research {
   display: grid;
   min-height: 600px;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   background: #1c0028;
 }
 
