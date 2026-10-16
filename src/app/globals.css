@@ -1285,6 +1285,26 @@ section[id] {
   color: var(--lime);
 }
 
+#visit address {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 28px;
+  padding-left: 20px;
+  border-left: 3px solid var(--brand-pink);
+  color: var(--deep);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+#visit address span:first-child {
+  font-weight: 700;
+}
+
+#visit address br {
+  display: none;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -15,6 +15,7 @@ export function SiteFooter() {
         <Link href="/privacy">Privacy &amp; Cookies</Link>
         <Link href="/terms">Terms &amp; Conditions</Link>
         <Link href="/legal">Legal Information</Link>
+        <a href="https://ahmedfayyaz.com" target="_blank" rel="noreferrer">Made by Ahmed</a>
       </div>
     </footer>
   );
