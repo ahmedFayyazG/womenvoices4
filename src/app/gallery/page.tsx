@@ -5,6 +5,8 @@ import "./gallery.css";
 
 export const metadata: Metadata = { title:"Gallery", description:"Photos from Women’s Voices community activities, learning and events.", alternates:{canonical:"/gallery"} };
 const featured = [
+  { src: "/gallery-video/community-clip-1.mp4", poster: "/gallery-video/community-clip-1-poster.jpg", video: true },
+  { src: "/gallery-video/community-clip-2.mp4", poster: "/gallery-video/community-clip-2-poster.jpg", video: true },
   { src: "/Images/community-event-photo-1.jpeg" },
   { src: "/gallery-video/community-event-1.mp4", poster: "/gallery-video/community-event-1-poster.jpg", video: true },
   { src: "/Images/community-event-photo-2.jpeg" },
