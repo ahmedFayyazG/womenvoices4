@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { GalleryGrid } from "@/components/gallery-grid";
 import { PageShell } from "@/components/page-shell";
 import "./gallery.css";
 
@@ -69,5 +69,5 @@ const galleryImages = [
 export default function GalleryPage(){return <PageShell title="GALLERY" intro="Moments from our community — learning, connecting, creating and growing together.">
 <section className="gallery-page" aria-label="Women’s Voices photo gallery">
 <div className="gallery-page-head"><span>OUR COMMUNITY IN PICTURES</span><p>{galleryImages.length} moments</p></div>
-<div className="gallery-masonry">{galleryImages.map((src,index)=><figure className="gallery-tile" key={src}><Image src={src} alt={`Women’s Voices community moment ${index+1}`} fill sizes="(max-width:700px) 100vw,(max-width:1100px) 50vw,33vw" priority={index<4}/><span>{String(index+1).padStart(2,"0")}</span></figure>)}</div>
+<GalleryGrid images={galleryImages}/>
 </section></PageShell>}
