@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
+  donationUrl,
   dropdownMenus,
   primaryNavigation,
   type MenuKey,
@@ -121,9 +122,9 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <Link className="partner" href="/support">
+          <a className="partner" href={donationUrl} target="_blank" rel="noopener noreferrer">
             SUPPORT OUR WORK
-          </Link>
+          </a>
           <Link className="contact-cta" href="/contact" aria-label="Contact Women’s Voices">
             <span className="sr-only">Contact</span>
           </Link>
@@ -223,14 +224,16 @@ export function SiteHeader() {
               </div>
             );
           })}
-          <Link
+          <a
             className="outline"
-            href="/support"
+            href={donationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             tabIndex={mobileOpen ? 0 : -1}
             onClick={() => setMobileOpen(false)}
           >
             SUPPORT OUR WORK
-          </Link>
+          </a>
           <Link
             className="outline"
             href="/contact"

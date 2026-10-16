@@ -2,6 +2,8 @@ export const SITE_NAME = "Women’s Voices";
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://womenvoices4.vercel.app";
 
+export const donationUrl = "https://www.goodhub.com/go/womensvoicescic";
+
 export const contact = {
   email: "admin@womensvoices.org.uk",
   phoneDisplay: "0161 225 6908",
