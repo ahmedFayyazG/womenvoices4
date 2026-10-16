@@ -2591,3 +2591,46 @@ body {
     height: clamp(380px, 66vh, 560px);
   }
 }
+
+/* Small laptops: smaller header bar, logo and navigation (phones keep their own sizes) */
+@media (min-width: 701px) and (max-width: 1440px) {
+  .site-header {
+    height: 62px;
+  }
+
+  .mark {
+    flex-basis: 220px;
+    padding: 6px 6px 6px 0;
+  }
+
+  .mark img {
+    width: 200px;
+    height: 88px;
+  }
+
+  .desktop-nav > a,
+  .nav-menu-item > a,
+  .menu-toggle {
+    font-size: clamp(12px, 1vw, 14px);
+  }
+
+  .desktop-nav .contact-cta {
+    width: 62px;
+  }
+
+  .mega {
+    top: 62px;
+  }
+
+  .hamb {
+    width: 62px;
+  }
+
+  .drawer {
+    inset: 62px 0 0;
+  }
+
+  section[id] {
+    scroll-margin-top: 72px;
+  }
+}
