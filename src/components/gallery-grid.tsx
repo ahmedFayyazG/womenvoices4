@@ -8,6 +8,7 @@ export function GalleryGrid({ images }: { images: string[] }) {
   const lastTrigger = useRef<HTMLElement | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const thumbRef = useRef<HTMLButtonElement>(null);
+  const touchX = useRef<number | null>(null);
   const total = images.length;
   const isOpen = active !== null;
 
@@ -65,7 +66,17 @@ export function GalleryGrid({ images }: { images: string[] }) {
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onClick={close}>
           <button ref={closeRef} type="button" className="lightbox-close" aria-label="Close photo viewer" onClick={close}>×</button>
           <button type="button" className="lightbox-nav lightbox-prev" aria-label="Previous photo" onClick={(e) => { e.stopPropagation(); step(-1); }}>‹</button>
-          <div className="lightbox-stage" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="lightbox-stage"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
+            onTouchEnd={(e) => {
+              if (touchX.current === null) return;
+              const dx = e.changedTouches[0].clientX - touchX.current;
+              touchX.current = null;
+              if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+            }}
+          >
             <Image key={images[active]} src={images[active]} alt={`Women’s Voices community moment ${active + 1}`} fill sizes="100vw" priority />
           </div>
           <button type="button" className="lightbox-nav lightbox-next" aria-label="Next photo" onClick={(e) => { e.stopPropagation(); step(1); }}>›</button>

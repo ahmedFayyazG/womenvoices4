@@ -2663,17 +2663,17 @@ body {
   z-index: 200;
   inset: 0;
   display: grid;
-  grid-template-columns: 72px 1fr 72px;
-  grid-template-rows: 1fr auto;
+  grid-template-columns: 72px minmax(0, 1fr) 72px;
+  grid-template-rows: minmax(0, 1fr) auto;
   align-items: center;
-  background: rgba(20, 0, 40, 0.94);
+  background: #10002a;
 }
 
 .lightbox-stage {
   position: relative;
   grid-column: 2;
   grid-row: 1;
-  height: 100%;
+  align-self: stretch;
   margin: 24px 0 8px;
 }
 
@@ -2687,7 +2687,7 @@ body {
   place-items: center;
   border: 0;
   color: #fff;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(20, 0, 40, 0.6);
   cursor: pointer;
   line-height: 1;
   transition: background 0.2s, color 0.2s;
@@ -2730,6 +2730,7 @@ body {
 }
 
 .lightbox-bar {
+  min-width: 0;
   grid-column: 1 / -1;
   grid-row: 2;
   display: flex;
@@ -2783,7 +2784,7 @@ body {
 
 @media (max-width: 700px) {
   .lightbox {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .lightbox-nav {
