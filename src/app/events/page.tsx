@@ -5,9 +5,9 @@ import "../gallery/gallery.css";
 
 export const metadata: Metadata = { title:"Events", description:"Women’s Voices event posters and community announcements.", alternates:{canonical:"/events"} };
 const eventPosters = [
+  "/Images/boliyan-poster.jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (1).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (11).jpeg",
-  "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (12).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (19).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (8).jpeg",
   "/Images/WhatsApp Image 2026-09-16 at 2.26.10 pm (9).jpeg",
