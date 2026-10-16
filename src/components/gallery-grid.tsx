@@ -3,7 +3,10 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export function GalleryGrid({ images }: { images: string[] }) {
+export type GalleryItem = { src: string; video?: boolean; poster?: string };
+
+export function GalleryGrid({ items }: { items: GalleryItem[] }) {
+  const images = items.map((item) => item.src);
   const [active, setActive] = useState<number | null>(null);
   const lastTrigger = useRef<HTMLElement | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -50,13 +53,14 @@ export function GalleryGrid({ images }: { images: string[] }) {
             <button
               type="button"
               className="gallery-tile-open"
-              aria-label={`Open photo ${index + 1} of ${total}`}
+              aria-label={`${items[index].video ? "Play video" : "Open photo"} ${index + 1} of ${total}`}
               onClick={(event) => {
                 lastTrigger.current = event.currentTarget;
                 setActive(index);
               }}
             >
-              <Image src={src} alt={`Women’s Voices community moment ${index + 1}`} fill sizes="(max-width:700px) 100vw,(max-width:1100px) 50vw,33vw" priority={index < 4} />
+              <Image src={items[index].poster ?? src} alt={items[index].video ? `Women’s Voices community video ${index + 1}` : `Women’s Voices community moment ${index + 1}`} fill sizes="(max-width:700px) 100vw,(max-width:1100px) 50vw,33vw" priority={index < 4} />
+              {items[index].video && <span className="gallery-play" aria-hidden="true">▶</span>}
             </button>
             <span>{String(index + 1).padStart(2, "0")}</span>
           </figure>
@@ -77,7 +81,11 @@ export function GalleryGrid({ images }: { images: string[] }) {
               if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
             }}
           >
-            <Image key={images[active]} src={images[active]} alt={`Women’s Voices community moment ${active + 1}`} fill sizes="100vw" priority />
+            {items[active].video ? (
+              <video key={images[active]} src={images[active]} poster={items[active].poster} controls autoPlay playsInline preload="metadata" />
+            ) : (
+              <Image key={images[active]} src={images[active]} alt={`Women’s Voices community moment ${active + 1}`} fill sizes="100vw" priority />
+            )}
           </div>
           <button type="button" className="lightbox-nav lightbox-next" aria-label="Next photo" onClick={(e) => { e.stopPropagation(); step(1); }}>›</button>
           <div className="lightbox-bar" onClick={(e) => e.stopPropagation()}>
@@ -94,7 +102,7 @@ export function GalleryGrid({ images }: { images: string[] }) {
                   aria-current={index === active}
                   onClick={() => setActive(index)}
                 >
-                  <Image src={src} alt="" fill sizes="96px" loading="lazy" />
+                  <Image src={items[index].poster ?? src} alt="" fill sizes="96px" loading="lazy" />
                 </button>
               ))}
             </div>

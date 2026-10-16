@@ -4,6 +4,12 @@ import { PageShell } from "@/components/page-shell";
 import "./gallery.css";
 
 export const metadata: Metadata = { title:"Gallery", description:"Photos from Women’s Voices community activities, learning and events.", alternates:{canonical:"/gallery"} };
+const featured = [
+  { src: "/gallery-video/community-cooking.mp4", poster: "/gallery-video/community-cooking-poster.jpg", video: true },
+  { src: "/Images/food-rice-platter.jpeg" },
+  { src: "/Images/food-pear-cakes.jpeg" },
+  { src: "/Images/food-pear-cake.jpeg" },
+];
 const galleryImages = [
   "/Images/community-radio-awards-1.jpeg",
   "/Images/community-radio-awards-2.jpeg",
@@ -68,8 +74,10 @@ const galleryImages = [
 
 
 
+const galleryItems = [...featured, ...galleryImages.map((src) => ({ src }))];
+
 export default function GalleryPage(){return <PageShell title="GALLERY" intro="Moments from our community — learning, connecting, creating and growing together.">
 <section className="gallery-page" aria-label="Women’s Voices photo gallery">
-<div className="gallery-page-head"><span>OUR COMMUNITY IN PICTURES</span><p>{galleryImages.length} moments</p></div>
-<GalleryGrid images={galleryImages}/>
+<div className="gallery-page-head"><span>OUR COMMUNITY IN PICTURES</span><p>{galleryItems.length} moments</p></div>
+<GalleryGrid items={galleryItems}/>
 </section></PageShell>}
