@@ -25,7 +25,7 @@ export default function ReportsPage() {
             women aged 50+ living in Longsight. The report documents health and
             social needs and presents recommendations for better practice.
           </p>
-          <a href={reports.communityResearch} target="_blank" rel="noreferrer">
+          <a href={reports.communityResearch} download="community-research-project-womens-voices.pdf">
             DOWNLOAD THE REPORT (PDF) →
           </a>
         </div>
@@ -40,7 +40,7 @@ export default function ReportsPage() {
             A collection of writing about, or inspired by, food developed
             during a creative writing workshop with members of Women’s Voices.
           </p>
-          <a href={reports.creativeWriting} target="_blank" rel="noreferrer">
+          <a href={reports.creativeWriting} download="creative-writing-food-pamphlet.pdf">
             DOWNLOAD THE PAMPHLET (PDF) →
           </a>
         </div>
@@ -50,13 +50,13 @@ export default function ReportsPage() {
         <span className="content-number">03</span>
         <h2>DOWNLOADS</h2>
         <div id="publications" className="download-list">
-          <a href={reports.communityResearch} target="_blank" rel="noreferrer">
+          <a href={reports.communityResearch} download="community-research-project-womens-voices.pdf">
             <span>Community Research Project</span>
-            <b>PDF ↗</b>
+            <b>PDF ↓</b>
           </a>
-          <a href={reports.creativeWriting} target="_blank" rel="noreferrer">
+          <a href={reports.creativeWriting} download="creative-writing-food-pamphlet.pdf">
             <span>Creative Writing &amp; Food</span>
-            <b>PDF ↗</b>
+            <b>PDF ↓</b>
           </a>
         </div>
         <p>

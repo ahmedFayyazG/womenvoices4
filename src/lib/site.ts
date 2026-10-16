@@ -97,7 +97,7 @@ export const siteRoutes = [
 
 export const reports = {
   communityResearch:
-    "https://womensvoices.org.uk/wp-content/uploads/2022/06/community-research-project-womens-voices-1-2.pdf",
+    "/reports/community-research-project-womens-voices.pdf",
   creativeWriting:
-    "https://womensvoices.org.uk/wp-content/uploads/2022/06/creative-writing-food-pamphlet_s2-1.pdf",
+    "/reports/creative-writing-food-pamphlet.pdf",
 };
