@@ -107,6 +107,34 @@ function WhatGuidesUs() {
   return <section id="priorities" className="wgu-section" aria-labelledby="what-guides-us-title"><div className="wgu-section-head wgu-reveal"><div><h2 id="what-guides-us-title">What Guides Us</h2></div><p>Our work is rooted in empowerment, equality, inclusion, wellbeing, education, and collective strength.</p></div><div className="wgu-policy-grid">{values.map((value, index) => <Link key={value.number} className="wgu-policy-card wgu-reveal" href="/about#guiding-principles" style={{ animationDelay: `${(index % 3) * 90}ms` }}><span>{value.number}</span><h3>{value.title}</h3><p>{value.description}</p><span aria-hidden="true" className="wgu-arrow">→</span></Link>)}</div></section>;
 }
 
+function FilmSpotlight() {
+  return (
+    <section className="home-film" aria-labelledby="film-title">
+      <div className="home-film-head">
+        <span>Women’s Voices · Longsight, Manchester</span>
+        <h2 id="film-title">Everywoman</h2>
+        <p>Women’s Voices is a women-led, not-for-profit organisation established in 2013. We create a safe, women-only space for women from global majority communities, including women seeking asylum and refugees, to build confidence, learn new skills and make their voices heard. Everywoman shows what that looks like when women tell their own stories.</p>
+      </div>
+      <div className="home-film-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/2bDA9RnJRJ0"
+          title="Everywoman – a documentary about the menopause"
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+      <div className="home-film-copy">
+        <p>‘Everywoman’ is a documentary born out of Whisper Sisters, a local group set up by Zion Centre Community Outreach Worker Anna Akhtar to support women experiencing the menopause. Its aim is to raise awareness, expose the myths and help remove the stigma around this natural phase of women’s lives.</p>
+        <p>This revealing documentary voices the accounts of women and men of Manchester’s ethnically diverse community. Women who suffered in silence, women who have felt let down by the ‘system’, and women who just want to come out of the shadows. Their stories are as uplifting as they are tragic.</p>
+        <p>We hear from Manchester’s professional experts who dispel the myths and offer valuable advice and information on how hormonal changes affect menopausal women, and what women can do to support and manage the menopausal journey.</p>
+        <small>Everywoman is produced by REELmcr in partnership with The Big Life Company. Funded by The National Lottery Community Fund.</small>
+      </div>
+    </section>
+  );
+}
+
 function ResearchSpotlight() {
   return (
     <section className="home-research" aria-labelledby="research-spotlight-title">
@@ -144,6 +172,7 @@ export default function Home() {
       <div className="news-grid">{programmes.map((item, index) => <article key={item.title}><div className="news-img"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectPosition: item.position }} /><span>{String(index + 1).padStart(2, "0")}</span></div><h3>{item.title}</h3><p>{item.description}</p><div className="practice"><div className="practice-img"><Image src={activities[index].image} alt="" fill sizes="120px" style={{ objectPosition: activities[index].position }} /></div><div className="practice-text"><strong>{activities[index].title}</strong><p>{activities[index].description}</p></div></div><Link href={item.href}>MORE INFORMATION →</Link></article>)}</div>
     </section>
     <WhatGuidesUs />
+    <FilmSpotlight />
     <section className="meeting" aria-labelledby="vision-title"><div className="meeting-copy"><h2 id="vision-title">EMPOWERMENT,<br />EQUALITY AND INCLUSION</h2><p>Our aim is to help break cycles of deprivation for Black, Asian, Minority Ethnic and Refugee women, while challenging barriers that prevent women from reaching their potential.</p><p>We strengthen women’s voice and influence so they can become ambassadors for other women and help change how women are viewed in communities and wider society.</p><Link href="/stories">READ OUR STORIES →</Link></div><div className="stats"><h3>WOMEN’S VOICES<br /><b>KEY DETAILS</b></h3><div><strong>15,000</strong><span>WOMEN IMPACTED</span></div><div><strong>2013</strong><span>ESTABLISHED</span></div><div><strong>50+</strong><span>RESEARCH FOCUS</span></div><div><strong>06</strong><span>RESEARCHERS TRAINED</span></div><div><strong>09</strong><span>KEY RECOMMENDATIONS</span></div><div><strong>CIC</strong><span>COMMUNITY ORGANISATION</span></div></div></section>
     <ResearchSpotlight />
     <section className="partners" aria-labelledby="partners-title"><p id="partners-title">SUPPORTED BY AND WORKING WITH</p><div><span className="partners-logo-box"><Image src="/logos/lloyds-bank-foundation.svg" alt="Lloyds Bank Foundation" width={300} height={73} /></span><span className="partners-logo-box"><Image src="/logos/national-lottery-community-fund.svg" alt="National Lottery Community Fund" width={300} height={98} /></span><span className="partners-logo-box"><Image src="/partners/mcc-logo.jpg" alt="Manchester City Council" width={330} height={63} /></span></div><Link href="/about#partners">SEE PARTNER ORGANISATIONS →</Link></section>
