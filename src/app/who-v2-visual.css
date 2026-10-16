@@ -16,7 +16,7 @@
 }
 
 .who-v2::after {
-  background: url("/who-we-are.jpg") center 55% / 120% auto no-repeat;
+  background: url("/underhero.jpeg") center / cover no-repeat;
   border: 8px solid var(--pale-pink);
   box-shadow: 0 0 0 3px #ef6ba7, 0 24px 55px rgba(57, 9, 111, 0.16);
   transform: translateY(-38%);
