@@ -689,15 +689,17 @@ section[id] {
 .home-research {
   display: grid;
   min-height: 600px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   background: #1c0028;
 }
 
 .home-research-image {
   position: relative;
-  min-height: 540px;
+  height: 460px;
+  min-height: 0;
+  align-self: center;
   z-index: 2;
-  margin: 5vw 0 -64px 5vw;
+  margin: 5vw 0 5vw 5vw;
   border: 12px solid #ff3ca6;
 }
 
