@@ -695,11 +695,10 @@ section[id] {
 
 .home-research-image {
   position: relative;
-  height: 620px;
   min-height: 0;
-  align-self: center;
+  align-self: stretch;
   z-index: 2;
-  margin: 5vw 0 5vw 5vw;
+  margin: 56px 0 56px 5vw;
   border: 12px solid #ff3ca6;
 }
 
