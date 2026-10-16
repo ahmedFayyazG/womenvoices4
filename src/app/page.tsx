@@ -72,6 +72,27 @@ const heroSlides = [
   "/hero/WhatsApp Image 2026-10-16 at 6.08.04 pm.jpeg",
   "/hero/asda.jpeg",
 ];
+// Vertical focus per slide (same order as heroSlides) so faces are not cropped by the full-bleed cover.
+const heroPositions = [
+  "center 25%",
+  "center 40%",
+  "center 30%",
+  "center 30%",
+  "center 20%",
+  "center 15%",
+  "center 30%",
+  "center 35%",
+  "center 50%",
+  "center 40%",
+  "center 45%",
+  "center 25%",
+  "center 50%",
+  "center 20%",
+  "center 55%",
+  "center 15%",
+  "center 65%",
+  "center 40%",
+];
 
 const values = [
   { number: "01", title: "Women’s Empowerment", description: "Strengthening confidence, independence, and influence for women within their communities." },
@@ -112,7 +133,7 @@ export default function Home() {
   return <>
     <section className="hero" aria-labelledby="home-title">
       <div className="hero-media-slider" aria-hidden="true">
-        {heroSlides.map((src, index) => <div className="hero-media-slide" key={src} style={{ animationDelay: `${index * 5}s`, animationDuration: `${heroSlides.length * 5}s` }}><Image src={src} alt="" fill priority={index === 0} sizes="100vw" /></div>)}
+        {heroSlides.map((src, index) => <div className="hero-media-slide" key={src} style={{ animationDelay: `${index * 5}s`, animationDuration: `${heroSlides.length * 5}s` }}><Image src={src} alt="" fill priority={index === 0} sizes="100vw" style={{ objectPosition: heroPositions[index] ?? "center 25%" }} /></div>)}
       </div>
       <div className="shade" /><div className="hero-center"><div className="hero-card"><h1 id="home-title">Women&apos;s Voices creates safe spaces for growth, healing, learning, leadership, and opportunity.</h1></div></div>
     </section>
