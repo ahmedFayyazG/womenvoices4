@@ -143,7 +143,7 @@ function ResearchSpotlight() {
       </div>
       <div className="home-research-copy">
         <span>Research report · Manchester</span>
-        <h2 id="research-spotlight-title">Uncertain Futures: 100 women’s voices</h2>
+        <h2 id="research-spotlight-title">Uncertain Futures</h2>
         <p>Uncertain Futures is an art and research project exploring work for women over 50 in Manchester. 100 women were interviewed about access to work, life at work, retirement and the impact of Covid. 44 volunteer, 44 have significant caring responsibilities and 45 live with a long-term health condition or disability, while 41 have an occupational or private pension.</p>
         <div className="home-research-metrics" aria-label="Research highlights">
           <div><strong>100</strong><span>Women over 50 interviewed</span></div>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 import "./stories.css";
@@ -48,24 +47,6 @@ const testimonials = [
   }
 ];
 
-const storyBreaks: (readonly [string, string] | null)[] = [
-  ["/gallery/event-18.jpg", "/gallery/event-11.jpg"],
-  ["/gallery/event-06.jpg", "/gallery/event-14.jpg"],
-  null,
-];
-
-const StoryImageRow = ({ photos }: { photos: readonly [string, string] }) => (
-  <div className="story-image-row story-image-row--two">
-    {photos.map((src) => (
-      <figure className="story-image story-image--small inner-story-image" key={src}>
-        <div>
-          <Image src={src} alt="Women’s Voices community life" fill sizes="(max-width: 900px) 100vw, 50vw" />
-        </div>
-      </figure>
-    ))}
-  </div>
-);
-
 export default function StoriesPage() {
   return <PageShell title="OUR STORIES" intro="First-hand stories of connection, confidence and change from women in our community.">
     <section className="stories-intro"><div className="stories-intro-inner"><span className="stories-kicker">In their own words · 2026</span><h2>Every woman arrives with her own story. Here, women share what belonging, learning and being heard has meant to them.</h2></div></section>
@@ -77,7 +58,6 @@ export default function StoriesPage() {
             <div className="testimonial-copy">{testimonial.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
           </article>
         </section>
-        {storyBreaks[index] && <StoryImageRow photos={storyBreaks[index]!} />}
       </div>
     ))}
     <section className="stories-closing"><span>Women supporting women</span><div><h2>A safe place to meet, learn, build confidence and move forward together.</h2><Link href="/contact">Connect with Women’s Voices →</Link></div></section>
