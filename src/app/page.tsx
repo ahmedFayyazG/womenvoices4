@@ -110,26 +110,29 @@ function WhatGuidesUs() {
 function FilmSpotlight() {
   return (
     <section className="home-film" aria-labelledby="film-title">
-      <div className="home-film-head">
-        <span>Women’s Voices · Longsight, Manchester</span>
-        <h2 id="film-title">Everywoman</h2>
-        <p>Women’s Voices is a women-led, not-for-profit organisation established in 2013. We create a safe, women-only space for women from global majority communities, including women seeking asylum and refugees, to build confidence, learn new skills and make their voices heard. Everywoman shows what that looks like when women tell their own stories.</p>
-      </div>
-      <div className="home-film-frame">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/2bDA9RnJRJ0"
-          title="Everywoman – a documentary about the menopause"
-          loading="lazy"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
-      <div className="home-film-copy">
-        <p>‘Everywoman’ is a documentary born out of Whisper Sisters, a local group set up by Zion Centre Community Outreach Worker Anna Akhtar to support women experiencing the menopause. Its aim is to raise awareness, expose the myths and help remove the stigma around this natural phase of women’s lives.</p>
-        <p>This revealing documentary voices the accounts of women and men of Manchester’s ethnically diverse community. Women who suffered in silence, women who have felt let down by the ‘system’, and women who just want to come out of the shadows. Their stories are as uplifting as they are tragic.</p>
-        <p>We hear from Manchester’s professional experts who dispel the myths and offer valuable advice and information on how hormonal changes affect menopausal women, and what women can do to support and manage the menopausal journey.</p>
-        <small>Everywoman is produced by REELmcr in partnership with The Big Life Company. Funded by The National Lottery Community Fund.</small>
+      <div className="home-film-inner">
+        <div className="home-film-head">
+          <div><span>Women’s Voices · Longsight, Manchester</span><h2 id="film-title">Everywoman</h2></div>
+          <p>Women’s Voices is a women-led, not-for-profit organisation established in 2013. We create a safe, women-only space for women from global majority communities, including women seeking asylum and refugees, to build confidence, learn new skills and make their voices heard. Everywoman shows what that looks like when women tell their own stories.</p>
+        </div>
+        <div className="home-film-body">
+          <div className="home-film-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/2bDA9RnJRJ0"
+              title="Everywoman – a documentary about the menopause"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          <div className="home-film-copy">
+            <p>‘Everywoman’ is a documentary born out of Whisper Sisters, a local group set up by Zion Centre Community Outreach Worker Anna Akhtar to support women experiencing the menopause. Its aim is to raise awareness, expose the myths and help remove the stigma around this natural phase of women’s lives.</p>
+            <p>This revealing documentary voices the accounts of women and men of Manchester’s ethnically diverse community. Women who suffered in silence, women who have felt let down by the ‘system’, and women who just want to come out of the shadows. Their stories are as uplifting as they are tragic.</p>
+            <p>We hear from Manchester’s professional experts who dispel the myths and offer valuable advice and information on how hormonal changes affect menopausal women, and what women can do to support and manage the menopausal journey.</p>
+            <small>Produced by REELmcr in partnership with The Big Life Company. Funded by The National Lottery Community Fund.</small>
+          </div>
+        </div>
       </div>
     </section>
   );
