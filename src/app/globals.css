@@ -267,7 +267,7 @@ section[id] {
 /* Homepage */
 .hero {
   position: relative;
-  height: 840px;
+  height: 760px;
   overflow: hidden;
   background-color: var(--deep);
   background-image: url("/hero-poster.webp");
@@ -798,7 +798,7 @@ section[id] {
 
 .meeting {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   background: var(--lav);
 }
 
@@ -1645,7 +1645,7 @@ section[id] {
 
 @media (max-width: 900px) {
   .hero {
-    height: 640px;
+    height: 580px;
   }
 
   .hero-center {

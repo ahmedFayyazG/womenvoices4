@@ -53,7 +53,6 @@ const activities = [
 ];
 
 const heroSlides = [
-  "/hero/hero-slide-6.webp",
   "/hero/ChatGPT Image Sep 18, 2026, 04_35_17 PM.png",
   "/hero/WhatsApp Image 2026-09-16 at 2.26.10 pm.jpeg",
   "/hero/WhatsApp Image 2026-09-18 at 12.17.28 pm (6).jpeg",
