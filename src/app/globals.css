@@ -696,7 +696,8 @@ section[id] {
 .home-research-image {
   position: relative;
   min-height: 540px;
-  margin: 5vw 0 5vw 5vw;
+  z-index: 2;
+  margin: 5vw 0 -64px 5vw;
   border: 12px solid #ff3ca6;
 }
 
@@ -1711,7 +1712,7 @@ section[id] {
 
   .home-research-image {
     min-height: 600px;
-    margin: 5vw;
+    margin: 5vw 5vw -48px;
   }
 
   .home-conversation {
@@ -1779,7 +1780,7 @@ section[id] {
 
   .home-research-image {
     min-height: 470px;
-    margin: 20px;
+    margin: 20px 20px -32px;
     border-width: 7px;
   }
 
