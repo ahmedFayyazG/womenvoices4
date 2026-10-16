@@ -2549,7 +2549,7 @@ body {
   }
 
   .hero {
-    height: clamp(420px, 72vh, 700px);
+    height: clamp(520px, 84vh, 720px);
   }
 
   .who-v2 {
@@ -2588,7 +2588,7 @@ body {
 
 @media (min-width: 901px) and (max-width: 1440px) and (max-height: 800px) {
   .hero {
-    height: clamp(380px, 66vh, 560px);
+    height: clamp(480px, 80vh, 640px);
   }
 }
 
