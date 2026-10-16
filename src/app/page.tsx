@@ -111,10 +111,7 @@ function FilmSpotlight() {
   return (
     <section className="home-film" aria-labelledby="film-title">
       <div className="home-film-inner">
-        <div className="home-film-head">
-          <div><span>Women’s Voices · Longsight, Manchester</span><h2 id="film-title">Everywoman</h2></div>
-          <p>Women’s Voices is a women-led, not-for-profit organisation established in 2013. We create a safe, women-only space for women from global majority communities, including women seeking asylum and refugees, to build confidence, learn new skills and make their voices heard. Everywoman shows what that looks like when women tell their own stories.</p>
-        </div>
+        <h2 id="film-title" className="home-film-title">Everywoman</h2>
         <div className="home-film-body">
           <div className="home-film-frame">
             <iframe

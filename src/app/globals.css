@@ -2467,36 +2467,12 @@ section[id] {
   margin: 0 auto;
 }
 
-.home-film-head {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  align-items: end;
-  gap: 50px;
-  margin-bottom: 48px;
-}
-
-.home-film-head span {
-  display: block;
-  color: var(--brand-pink);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.home-film-head h2 {
-  margin: 18px 0 0;
+.home-film-title {
+  margin: 0 0 48px;
   color: var(--deep);
   font-size: var(--text-display);
   font-weight: 800;
   line-height: 0.95;
-}
-
-.home-film-head > p {
-  max-width: 440px;
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.5;
 }
 
 .home-film-body {
@@ -2544,7 +2520,6 @@ section[id] {
     padding-block: 48px;
   }
 
-  .home-film-head,
   .home-film-body {
     grid-template-columns: 1fr;
     gap: 24px;
