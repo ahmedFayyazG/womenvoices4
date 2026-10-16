@@ -13,6 +13,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "Googlebot",
         allow: "/",
         disallow: ["/contact/thank-you"],
+
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
