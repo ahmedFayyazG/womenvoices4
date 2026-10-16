@@ -18,7 +18,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: hero-slide-fade 30s linear infinite;
+  animation: hero-slide-fade 90s linear infinite;
   will-change: opacity;
 }
 
@@ -38,11 +38,12 @@
   z-index: 2;
 }
 
+/* Timings assume 18 slides at 5s each (90s loop); update with the slide count. */
 @keyframes hero-slide-fade {
   0% { opacity: 0; }
-  2% { opacity: 1; }
-  15% { opacity: 1; }
-  18% { opacity: 0; }
+  0.6% { opacity: 1; }
+  5% { opacity: 1; }
+  5.6% { opacity: 0; }
   100% { opacity: 0; }
 }
 

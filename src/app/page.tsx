@@ -53,12 +53,24 @@ const activities = [
 ];
 
 const heroSlides = [
-  "/hero/ChatGPT Image Sep 18, 2026, 04_35_17 PM.png",
-  "/hero/WhatsApp Image 2026-09-16 at 2.26.10 pm.jpeg",
-  "/hero/WhatsApp Image 2026-09-18 at 12.17.28 pm (6).jpeg",
-  "/hero/hero-slide-3.jpg",
-  "/hero/hero-slide-4.jpg",
-  "/hero/hero-slide-5.jpg",
+  "/hero/1st.png",
+  "/hero/Ceremonial group portrait at Manchester Central Library.png",
+  "/hero/WhatsApp Image 2026-10-16 at 5.46.15 pm (1).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.46.15 pm (2).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.46.15 pm (4).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.46.15 pm.jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.49.13 pm.jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.50.25 pm (1).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.50.25 pm (2).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.50.25 pm (3).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.50.25 pm.jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.51.01 pm (1).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 5.51.01 pm (2).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 6.08.03 pm (1).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 6.08.03 pm.jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 6.08.04 pm (1).jpeg",
+  "/hero/WhatsApp Image 2026-10-16 at 6.08.04 pm.jpeg",
+  "/hero/asda.jpeg",
 ];
 
 const values = [
