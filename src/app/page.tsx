@@ -20,7 +20,7 @@ const programmes = [
       "Our volunteers run weekly drop-ins, lead environmental and food-growing sessions, deliver arts, crafts and sewing activities, and organise trips and events, with many former service users now volunteering themselves.",
   },
   {
-    image: "/what-we-do/events-socials.jpg",
+    image: "/hero/community.jpeg",
     position: "50% 50%",
     title: "COMMUNITY",
     href: "/about#activities",
