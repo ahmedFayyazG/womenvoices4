@@ -5,6 +5,12 @@ import "./gallery.css";
 
 export const metadata: Metadata = { title:"Gallery", description:"Photos from Women’s Voices community activities, learning and events.", alternates:{canonical:"/gallery"} };
 const featured = [
+  { src: "/Images/garden-umbrella.jpeg" },
+  { src: "/gallery-video/garden-visit-1.mp4", poster: "/gallery-video/garden-visit-1-poster.jpg", video: true },
+  { src: "/Images/garden-visit-photo-1.jpeg" },
+  { src: "/Images/garden-visit-photo-2.jpeg" },
+  { src: "/gallery-video/garden-visit-2.mp4", poster: "/gallery-video/garden-visit-2-poster.jpg", video: true },
+  { src: "/Images/garden-group.jpeg" },
   { src: "/gallery-video/community-cooking.mp4", poster: "/gallery-video/community-cooking-poster.jpg", video: true },
   { src: "/Images/food-rice-platter.jpeg" },
   { src: "/Images/food-pear-cakes.jpeg" },
